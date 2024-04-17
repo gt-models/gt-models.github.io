@@ -14,17 +14,63 @@ In this website, we provide a number of additional resources to complement the p
 
 <br>
 
-#### **Short Video Demo**
+#### **Recordings of Real-Time System**
 ---
 
+<br>
+
+##### **_Anon Performance with the System_**
+
+The following two excerpts are from the live performance using the system. 
+As mentioned in the paper, the system was developed in collaboration with ANON, 
+for a series of recuring live performances.
+
+> **Note**  
+> The organizers of the concert have recorded the entire performance, and will release the videos to the public soon. 
+> we will link the full video here. 
+
+The following video is a snippet of the recording made by the organizers.
+
+<video width="300" height="200" controls>
+  <source src="/assets/video/vid2_pro_camera.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+The following video is a short phone recording. As mentioned above, the full video with good audio quality will be made available.
+
+<video width="300" height="200" controls>
+  <source src="/assets/video/a.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 
+<br>
 
-<video width="600" height="400" controls>
+
+<br>
+
+##### **_System Demo_**
+
+> **Note**
+> The demos here are prepared by the authors of the paper.
+
+The following video shows the system in action. The interface shown here is slightly different from the one shared in this website.
+However, the underlying system is the same. To download the latest plugin, please visit the [VST Plugins](/resources/source_code_and_vst_plugins/) page.
+
+In this recording, we use an arpegiating bassline played is looped and fed into the system (bottom-right corner). In the meantime, 
+a live performance on the synthesizer (top-right) is also fed into the system. The system generates the drums in real-time, which
+are then synthesized using a drum synthesizer (left).
+
+
+<video width="300" height="200" controls>
   <source src="/assets/video/VCV_VST_Keyboard_LowRes.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
+<br>
+<br>
+
+[**Click Here for More Recordings**](/generated_examples/jam_session_recordings){: .btn}
 
 [//]: # (Setup:)
 
@@ -53,20 +99,6 @@ In this website, we provide a number of additional resources to complement the p
 
 [//]: # (- For Rides and Toms, two separate Mutable Instrument Plait modules were used.)
 
-
-
-<br>
-
-#### **Live Performance**
----
-
-The following two excerpt are from the live performance using the system. 
-As mentioned in the paper, the system was developed in collaboration with ANON, 
-for a series of recuring live performances.
-
-> **Note**  
-> The organizers of the concert have recorded the entire performance, and will release the videos to the public soon. 
-> we will link the full video here. 
 
 
 
