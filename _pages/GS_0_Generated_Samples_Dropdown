@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Generated Examples | Anon  ISMIR2024</title>
+    <title>Audio/Midi Examples | Anon  ISMIR2024</title>
     <meta name="author" content="Anon  ISMIR2024" />
     <meta name="description" content="Complementary data for the ISMIR 2024 paper submission
 " />
@@ -69,11 +69,13 @@
 
               <!-- Other pages -->
               <li class="nav-item dropdown active">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Generated Examples<span class="sr-only">(current)</span></a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Audio/Midi Examples<span class="sr-only">(current)</span></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="/generated_examples/reconstructed_samples/">Reconstructions</a>
                   <a class="dropdown-item" href="/generated_examples/random_samples/">Random Samples</a>
                   <a class="dropdown-item" href="/generated_examples/interpolated_samples/">Interpolated Samples</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/generated_examples/jam_session_recordings/">Jam Session Recordings</a>
                 </div>
               </li>
               <li class="nav-item dropdown ">
@@ -108,7 +110,7 @@
         <div class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Generated Examples</h1>
+            <h1 class="post-title">Audio/Midi Examples</h1>
             <p class="post-description"></p>
           </header>
 
