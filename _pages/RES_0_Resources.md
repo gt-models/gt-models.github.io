@@ -1,14 +1,23 @@
 ---
 layout: page
-title: Resources
+title: Additional Resources
 nav: true
-nav_order: 70
+nav_order: 1000
 dropdown: true
 children:
-  - title: Trained Models
+  - title: Generative Models (Download and API)
     permalink: /resources/trained_models/
-  - title: Colab Notebooks
+  - title: UMAP Analysis
+    permalink: /further_analysis/umap/
+  - title: Colab Notebooks (Quick Interaction)
     permalink: /resources/colab_notebooks/
-  - title: VST Plugins
+  - title: VST Plugins (Real-time Deployment)
     permalink: /resources/source_code_and_vst_plugins/
+  - title: divider
+  
+  - title: Genre Classifier Model
+    permalink: /further_analysis/genre_classifier_model/  
+  - title: divider
+    
+
 ---
