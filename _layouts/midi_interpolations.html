@@ -1,19 +1,21 @@
 ---
 layout: default
 ---
+
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-description">{{ page.description }}</p>
+    <hr>
+    <br><br>
   </header>
 
   <article>
-      {% include toc.html html=content %}
     {{ content }}
+
   </article>
 
   <style>
-
     .midi-player, .midi-visualizer {
       background-color: #4d4;
       display: block;
@@ -24,7 +26,14 @@ layout: default
       font-size: 1em; /* Reduce the size of subset labels */
     }
     .player-container {
+      margin-top: 10px; /* Add top margin for spacing */
+      display: flex;
+      justify-content: start; /* Align players to the start of the container */
+      gap: 20px; /* Space between the player and the visualizer */
       flex-basis: 100%; /* Adjust the container size for each player */
+    }
+    .players-row {
+      display: block; /* Ensures each row is displayed on a new line */
     }
   </style>
 
@@ -43,47 +52,53 @@ layout: default
   <!-- Shared MIDI File Selector -->
   <label for="midiSelect{{ genre }}">Select MIDI File for {{ genre }}:</label>
   <select id="midiSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+    <option value="" selected disabled>Select MIDI File</option> <!-- Default 'prompt' option -->
     {% for i in (1..49) %}
       <option value="{{ i }}">MIDI {{ i }}</option>
     {% endfor %}
   </select>
 
   <!-- Beta Value Selector -->
-  <label for="betaSelect{{ genre }}"> ---------- Select Beta:</label>
+  <label for="betaSelect{{ genre }}">Select Beta:</label>
   <select id="betaSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+    <option value="" selected disabled>Select Beta</option>
     <option value="0.2">0.2</option>
     <option value="0.5">0.5</option>
     <option value="1.0">1.0</option>
   </select>
 
-  <!-- Players Row -->
-  <div style="display: flex; justify-content: start; gap: 20px;">
+  <!-- Base Player Row -->
+  <div class="players-row">
     <div class="player-container">
-       <h4>Base</h4>
+      <h4>Base </h4>
       <midi-player id="midiPlayer{{ genre }}Base" sound-font visualizer="#myVisualizer{{ genre }}Base"></midi-player>
       <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}Base"></midi-visualizer>
     </div>
   </div>
 
-    <div style="display: flex; justify-content: start; gap: 20px;">
+  <!-- Mute Player Row -->
+  <br><br><br>
+  <div class="players-row">
     <div class="player-container">
       <h4>Mute</h4>
       <midi-player id="midiPlayer{{ genre }}Mute" sound-font visualizer="#myVisualizer{{ genre }}Mute"></midi-player>
       <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}Mute"></midi-visualizer>
     </div>
   </div>
-
-    <div style="display: flex; justify-content: start; gap: 20px;">
+  <br><br><br>
+  <!-- MuteGenre1 Player Row -->
+  <div class="players-row">
     <div class="player-container">
-      <h4>MuteGenre1</h4>
+      <h4>MG1</h4>
       <midi-player id="midiPlayer{{ genre }}MuteGenre1" sound-font visualizer="#myVisualizer{{ genre }}MuteGenre1"></midi-player>
       <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}MuteGenre1"></midi-visualizer>
     </div>
   </div>
-
-    <div style="display: flex; justify-content: start; gap: 20px;">
+  <br><br><br>
+  <!-- MuteGenre2 Player Row -->
+  <div class="players-row">
     <div class="player-container">
-      <h4>MuteGenre2</h4>
+      <h4>MG2</h4>
       <midi-player id="midiPlayer{{ genre }}MuteGenre2" sound-font visualizer="#myVisualizer{{ genre }}MuteGenre2"></midi-player>
       <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}MuteGenre2"></midi-visualizer>
     </div>
@@ -98,8 +113,11 @@ layout: default
       var subsets = ["Base", "Mute", "MuteGenre1", "MuteGenre2"];
       subsets.forEach(function(subset) {
         var midiPlayer = document.getElementById('midiPlayer' + genre + subset);
+        var visualizerElement = document.getElementById('myVisualizer' + genre + subset);
         var filePrefix = subset === "GroundTruth" ? "Ground Truth/" : subset + "_" + betaValue + "/"; // Special case for Ground Truth
         midiPlayer.src = "{{ site.baseurl }}/{{ page.root_dir }}/" + filePrefix  + genre + "/" + midiIndex + ".mid";
+        // Reset visualizer to reload with new data
+        visualizerElement.setAttribute('src', midiPlayer.src);
       });
     }
 

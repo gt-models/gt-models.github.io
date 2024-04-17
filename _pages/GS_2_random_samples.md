@@ -1,7 +1,7 @@
 ---
 layout: midi_random_samples
-title: "Reconstructed Test Samples"
-genres: ["All_Samples"]
+title: "Random Generations"
+genres: ["Base", "Mute", "MuteGenre1", "MuteGenre2"]
 root_dir: "assets/midi_random_gens/"
 num_examples: 50
 permalink: /generated_examples/random_samples/
@@ -16,8 +16,8 @@ horizontal: false
 For the random generations, we generate 100 random samples for each model.
 
 > **Warning**
-> The side-by-side players are not correlated. Please note for simplifying the visualizations, we are showing the 
-> generations in a single row although they are `NOT` correlated.
+> Note that the generations for different beta values are not comparable!
+> That is, if you change the beta value, you shouldn't expect the generations to be similar/relevant to each other.
 
 
  
