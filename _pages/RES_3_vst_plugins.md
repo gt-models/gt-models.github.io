@@ -15,7 +15,7 @@ horizontal: false
 > The source code will be provided as a git repository in the final version. 
 > In the meantime, you can download the source code as a zip file.
 
-[**Download**](/assets/assets/source_code_temp.zip){: .btn}
+[**Download**](/assets/source_code_temp.zip){: .btn}
 
 <br> 
 
@@ -28,7 +28,7 @@ horizontal: false
 > The plugin is **cross-platform** and has been tested on **Linux** (Ubuntu 20.04), **MacOS** (Intel and ARM) and **Windows**.
 > Source Code for deployment on Linux-based SBCs (e.g. **Raspberry Pi**) is under development and will be provided in the final version.
 
-[**Download**](/assets/assets/source_code_temp.zip){: .btn}
+[**Download**](/assets/source_code_temp.zip){: .btn}
 
 
 <video autoplay="autoplay" loop="loop" width="768" height="512">
