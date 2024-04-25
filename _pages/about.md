@@ -103,16 +103,6 @@ are then synthesized using a drum synthesizer (left).
 
 
 
-<br>
-
-#### **Real-time Jams**
----
-
-The following jams were conducted by the authors of the paper. 
-These demos have not been editted, and are presented as recorded.
-
-
-
 
 <br>
 
