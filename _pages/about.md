@@ -115,9 +115,12 @@ are then synthesized using a drum synthesizer (left).
 
 
 - Listen to the generated samples:
+  - [Real-time Jam Sessions]({{site.baseurl}}/generated_examples/jam_session_recordings/)
   - [Test set reconstructed generations]({{site.baseurl}}/generated_examples/reconstructed_samples/)
   - [Random generations]({{site.baseurl}}/generated_examples/random_samples/)
   - [Interpolation samples]({{site.baseurl}}/generated_examples/interpolated_samples/)
+  - [Mute Control samples]({{site.baseurl}}/generated_examples/mute_control_samples/)
+  - [Genre Control samples]({{site.baseurl}}/generated_examples/genre_control_samples/)
   
   <br>
   
