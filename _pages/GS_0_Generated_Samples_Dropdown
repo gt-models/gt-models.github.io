@@ -5,14 +5,19 @@ nav: true
 nav_order: 80
 dropdown: true
 children:
+  - title: Jam Session Recordings
+    permalink: /generated_examples/jam_session_recordings/
+  - title: divider
+
   - title: Reconstructions
     permalink: /generated_examples/reconstructed_samples/
   - title: Random Samples
     permalink: /generated_examples/random_samples/
   - title: Interpolated Samples
     permalink: /generated_examples/interpolated_samples/
+  - title: Mute Control Samples
+    permalink: /generated_examples/mute_control_samples/
+  - title: Genre Control Samples
+    permalink: /generated_examples/genre_control_samples/
 
-  - title: divider
-  - title: Jam Session Recordings
-    permalink: /generated_examples/jam_session_recordings/
 ---
