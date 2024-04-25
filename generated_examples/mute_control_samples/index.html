@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Mute Control Test Samples | Anon  ISMIR2024</title>
+    <meta name="author" content="Anon  ISMIR2024">
+    <meta name="description" content="Complementary data for the ISMIR 2024 paper submission
+">
+    <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://generativedata.github.io/generated_examples/mute_control_samples/">
+    
+    <!-- Dark Mode -->
+    
+
+  </head>
+
+  <!-- Body -->
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+          <a class="navbar-brand title font-weight-lighter" href="/"><span class="font-weight-bold">Anon </span>ISMIR2024</a>
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/">HOME</a>
+              </li>
+              
+
+              <!-- Other pages -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Audio/Midi Examples</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/generated_examples/jam_session_recordings/">Jam Session Recordings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/generated_examples/reconstructed_samples/">Reconstructions</a>
+                  <a class="dropdown-item" href="/generated_examples/random_samples/">Random Samples</a>
+                  <a class="dropdown-item" href="/generated_examples/interpolated_samples/">Interpolated Samples</a>
+                  <a class="dropdown-item" href="/generated_examples/mute_control_samples/">Mute Control Samples</a>
+                  <a class="dropdown-item" href="/generated_examples/genre_control_samples/">Genre Control Samples</a>
+                </div>
+              </li>
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Additional Resources</a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/resources/trained_models/">Generative Models (Download and API)</a>
+                  <a class="dropdown-item" href="/further_analysis/umap/">UMAP Analysis</a>
+                  <a class="dropdown-item" href="/resources/colab_notebooks/">Colab Notebooks (Quick Interaction)</a>
+                  <a class="dropdown-item" href="/resources/source_code_and_vst_plugins/">VST Plugins (Real-time Deployment)</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/further_analysis/genre_classifier_model/">Genre Classifier Model</a>
+                  <div class="dropdown-divider"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Scrolling Progress Bar -->
+      <progress id="progress" value="0">
+        <div class="progress-container">
+          <span class="progress-bar"></span>
+        </div>
+      </progress>
+    </header>
+
+
+    <!-- Content -->
+    <div class="container mt-5">
+      <div class="post">
+  <header class="post-header">
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <h2 id="voice-muted-test-samples">Voice Muted Test Samples</h2>
+
+<p>For each voice group (i.e. Kick, Snare, Hats, Toms, Cymbals), we randomly select 100 test samples, in which the voice is active.
+We then mute the voice and generate the new pattern using the models.</p>
+
+
+  </article>
+
+  <style>
+    .midi-player, .midi-visualizer {
+      background-color: #4d4;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <!-- MIDI Player Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/midi-player@1.5.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
+
+  
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 1</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+  <h3 style="font-weight: bold;">Kicks</h3>
+  <hr>
+  <select id="sampleSelect0" onchange="updateMidiPlayers('0')">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+    <option value="20">Sample 20</option>
+    
+    <option value="21">Sample 21</option>
+    
+    <option value="22">Sample 22</option>
+    
+    <option value="23">Sample 23</option>
+    
+    <option value="24">Sample 24</option>
+    
+    <option value="25">Sample 25</option>
+    
+    <option value="26">Sample 26</option>
+    
+    <option value="27">Sample 27</option>
+    
+    <option value="28">Sample 28</option>
+    
+    <option value="29">Sample 29</option>
+    
+    <option value="30">Sample 30</option>
+    
+    <option value="31">Sample 31</option>
+    
+    <option value="32">Sample 32</option>
+    
+    <option value="33">Sample 33</option>
+    
+    <option value="34">Sample 34</option>
+    
+    <option value="35">Sample 35</option>
+    
+    <option value="36">Sample 36</option>
+    
+    <option value="37">Sample 37</option>
+    
+    <option value="38">Sample 38</option>
+    
+    <option value="39">Sample 39</option>
+    
+    <option value="40">Sample 40</option>
+    
+    <option value="41">Sample 41</option>
+    
+    <option value="42">Sample 42</option>
+    
+    <option value="43">Sample 43</option>
+    
+    <option value="44">Sample 44</option>
+    
+    <option value="45">Sample 45</option>
+    
+    <option value="46">Sample 46</option>
+    
+    <option value="47">Sample 47</option>
+    
+    <option value="48">Sample 48</option>
+    
+    <option value="49">Sample 49</option>
+    
+    <option value="50">Sample 50</option>
+    
+    <option value="51">Sample 51</option>
+    
+    <option value="52">Sample 52</option>
+    
+    <option value="53">Sample 53</option>
+    
+    <option value="54">Sample 54</option>
+    
+    <option value="55">Sample 55</option>
+    
+    <option value="56">Sample 56</option>
+    
+    <option value="57">Sample 57</option>
+    
+    <option value="58">Sample 58</option>
+    
+    <option value="59">Sample 59</option>
+    
+    <option value="60">Sample 60</option>
+    
+    <option value="61">Sample 61</option>
+    
+    <option value="62">Sample 62</option>
+    
+    <option value="63">Sample 63</option>
+    
+    <option value="64">Sample 64</option>
+    
+    <option value="65">Sample 65</option>
+    
+    <option value="66">Sample 66</option>
+    
+    <option value="67">Sample 67</option>
+    
+    <option value="68">Sample 68</option>
+    
+    <option value="69">Sample 69</option>
+    
+    <option value="70">Sample 70</option>
+    
+    <option value="71">Sample 71</option>
+    
+    <option value="72">Sample 72</option>
+    
+    <option value="73">Sample 73</option>
+    
+    <option value="74">Sample 74</option>
+    
+    <option value="75">Sample 75</option>
+    
+    <option value="76">Sample 76</option>
+    
+    <option value="77">Sample 77</option>
+    
+    <option value="78">Sample 78</option>
+    
+    <option value="79">Sample 79</option>
+    
+    <option value="80">Sample 80</option>
+    
+    <option value="81">Sample 81</option>
+    
+    <option value="82">Sample 82</option>
+    
+    <option value="83">Sample 83</option>
+    
+    <option value="84">Sample 84</option>
+    
+    <option value="85">Sample 85</option>
+    
+    <option value="86">Sample 86</option>
+    
+    <option value="87">Sample 87</option>
+    
+    <option value="88">Sample 88</option>
+    
+    <option value="89">Sample 89</option>
+    
+    <option value="90">Sample 90</option>
+    
+    <option value="91">Sample 91</option>
+    
+    <option value="92">Sample 92</option>
+    
+    <option value="93">Sample 93</option>
+    
+    <option value="94">Sample 94</option>
+    
+    <option value="95">Sample 95</option>
+    
+    <option value="96">Sample 96</option>
+    
+    <option value="97">Sample 97</option>
+    
+    <option value="98">Sample 98</option>
+    
+    <option value="99">Sample 99</option>
+    
+  </select>
+  <select id="modelSelect0" onchange="updateMidiPlayers('0')">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
+
+    <option value="0">Mute</option>
+    <option value="1">MuteGenre1</option>
+    <option value="2">MuteGenre2</option>
+  </select>
+  <select id="betaSelect0" onchange="updateMidiPlayers('0')">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <br>
+
+    <h7>Not Muted</h7>
+    <br>
+    <midi-player id="midiPlayer0NotMuted" sound-font visualizer="#midiVisualizer0NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer0NotMuted"></midi-visualizer>
+    <br>
+
+    <h7>Muted</h7>
+    <br>
+    <midi-player id="midiPlayer0Muted" sound-font visualizer="#midiVisualizer0Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer0Muted"></midi-visualizer>
+  </div>
+</div>
+<br>
+
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 2</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+  <h3 style="font-weight: bold;">Snares</h3>
+  <hr>
+  <select id="sampleSelect1" onchange="updateMidiPlayers('1')">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+    <option value="20">Sample 20</option>
+    
+    <option value="21">Sample 21</option>
+    
+    <option value="22">Sample 22</option>
+    
+    <option value="23">Sample 23</option>
+    
+    <option value="24">Sample 24</option>
+    
+    <option value="25">Sample 25</option>
+    
+    <option value="26">Sample 26</option>
+    
+    <option value="27">Sample 27</option>
+    
+    <option value="28">Sample 28</option>
+    
+    <option value="29">Sample 29</option>
+    
+    <option value="30">Sample 30</option>
+    
+    <option value="31">Sample 31</option>
+    
+    <option value="32">Sample 32</option>
+    
+    <option value="33">Sample 33</option>
+    
+    <option value="34">Sample 34</option>
+    
+    <option value="35">Sample 35</option>
+    
+    <option value="36">Sample 36</option>
+    
+    <option value="37">Sample 37</option>
+    
+    <option value="38">Sample 38</option>
+    
+    <option value="39">Sample 39</option>
+    
+    <option value="40">Sample 40</option>
+    
+    <option value="41">Sample 41</option>
+    
+    <option value="42">Sample 42</option>
+    
+    <option value="43">Sample 43</option>
+    
+    <option value="44">Sample 44</option>
+    
+    <option value="45">Sample 45</option>
+    
+    <option value="46">Sample 46</option>
+    
+    <option value="47">Sample 47</option>
+    
+    <option value="48">Sample 48</option>
+    
+    <option value="49">Sample 49</option>
+    
+    <option value="50">Sample 50</option>
+    
+    <option value="51">Sample 51</option>
+    
+    <option value="52">Sample 52</option>
+    
+    <option value="53">Sample 53</option>
+    
+    <option value="54">Sample 54</option>
+    
+    <option value="55">Sample 55</option>
+    
+    <option value="56">Sample 56</option>
+    
+    <option value="57">Sample 57</option>
+    
+    <option value="58">Sample 58</option>
+    
+    <option value="59">Sample 59</option>
+    
+    <option value="60">Sample 60</option>
+    
+    <option value="61">Sample 61</option>
+    
+    <option value="62">Sample 62</option>
+    
+    <option value="63">Sample 63</option>
+    
+    <option value="64">Sample 64</option>
+    
+    <option value="65">Sample 65</option>
+    
+    <option value="66">Sample 66</option>
+    
+    <option value="67">Sample 67</option>
+    
+    <option value="68">Sample 68</option>
+    
+    <option value="69">Sample 69</option>
+    
+    <option value="70">Sample 70</option>
+    
+    <option value="71">Sample 71</option>
+    
+    <option value="72">Sample 72</option>
+    
+    <option value="73">Sample 73</option>
+    
+    <option value="74">Sample 74</option>
+    
+    <option value="75">Sample 75</option>
+    
+    <option value="76">Sample 76</option>
+    
+    <option value="77">Sample 77</option>
+    
+    <option value="78">Sample 78</option>
+    
+    <option value="79">Sample 79</option>
+    
+    <option value="80">Sample 80</option>
+    
+    <option value="81">Sample 81</option>
+    
+    <option value="82">Sample 82</option>
+    
+    <option value="83">Sample 83</option>
+    
+    <option value="84">Sample 84</option>
+    
+    <option value="85">Sample 85</option>
+    
+    <option value="86">Sample 86</option>
+    
+    <option value="87">Sample 87</option>
+    
+    <option value="88">Sample 88</option>
+    
+    <option value="89">Sample 89</option>
+    
+    <option value="90">Sample 90</option>
+    
+    <option value="91">Sample 91</option>
+    
+    <option value="92">Sample 92</option>
+    
+    <option value="93">Sample 93</option>
+    
+    <option value="94">Sample 94</option>
+    
+    <option value="95">Sample 95</option>
+    
+    <option value="96">Sample 96</option>
+    
+    <option value="97">Sample 97</option>
+    
+    <option value="98">Sample 98</option>
+    
+    <option value="99">Sample 99</option>
+    
+  </select>
+  <select id="modelSelect1" onchange="updateMidiPlayers('1')">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
+
+    <option value="0">Mute</option>
+    <option value="1">MuteGenre1</option>
+    <option value="2">MuteGenre2</option>
+  </select>
+  <select id="betaSelect1" onchange="updateMidiPlayers('1')">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <br>
+
+    <h7>Not Muted</h7>
+    <br>
+    <midi-player id="midiPlayer1NotMuted" sound-font visualizer="#midiVisualizer1NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer1NotMuted"></midi-visualizer>
+    <br>
+
+    <h7>Muted</h7>
+    <br>
+    <midi-player id="midiPlayer1Muted" sound-font visualizer="#midiVisualizer1Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer1Muted"></midi-visualizer>
+  </div>
+</div>
+<br>
+
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 3</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+  <h3 style="font-weight: bold;">Hats</h3>
+  <hr>
+  <select id="sampleSelect2" onchange="updateMidiPlayers('2')">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+    <option value="20">Sample 20</option>
+    
+    <option value="21">Sample 21</option>
+    
+    <option value="22">Sample 22</option>
+    
+    <option value="23">Sample 23</option>
+    
+    <option value="24">Sample 24</option>
+    
+    <option value="25">Sample 25</option>
+    
+    <option value="26">Sample 26</option>
+    
+    <option value="27">Sample 27</option>
+    
+    <option value="28">Sample 28</option>
+    
+    <option value="29">Sample 29</option>
+    
+    <option value="30">Sample 30</option>
+    
+    <option value="31">Sample 31</option>
+    
+    <option value="32">Sample 32</option>
+    
+    <option value="33">Sample 33</option>
+    
+    <option value="34">Sample 34</option>
+    
+    <option value="35">Sample 35</option>
+    
+    <option value="36">Sample 36</option>
+    
+    <option value="37">Sample 37</option>
+    
+    <option value="38">Sample 38</option>
+    
+    <option value="39">Sample 39</option>
+    
+    <option value="40">Sample 40</option>
+    
+    <option value="41">Sample 41</option>
+    
+    <option value="42">Sample 42</option>
+    
+    <option value="43">Sample 43</option>
+    
+    <option value="44">Sample 44</option>
+    
+    <option value="45">Sample 45</option>
+    
+    <option value="46">Sample 46</option>
+    
+    <option value="47">Sample 47</option>
+    
+    <option value="48">Sample 48</option>
+    
+    <option value="49">Sample 49</option>
+    
+    <option value="50">Sample 50</option>
+    
+    <option value="51">Sample 51</option>
+    
+    <option value="52">Sample 52</option>
+    
+    <option value="53">Sample 53</option>
+    
+    <option value="54">Sample 54</option>
+    
+    <option value="55">Sample 55</option>
+    
+    <option value="56">Sample 56</option>
+    
+    <option value="57">Sample 57</option>
+    
+    <option value="58">Sample 58</option>
+    
+    <option value="59">Sample 59</option>
+    
+    <option value="60">Sample 60</option>
+    
+    <option value="61">Sample 61</option>
+    
+    <option value="62">Sample 62</option>
+    
+    <option value="63">Sample 63</option>
+    
+    <option value="64">Sample 64</option>
+    
+    <option value="65">Sample 65</option>
+    
+    <option value="66">Sample 66</option>
+    
+    <option value="67">Sample 67</option>
+    
+    <option value="68">Sample 68</option>
+    
+    <option value="69">Sample 69</option>
+    
+    <option value="70">Sample 70</option>
+    
+    <option value="71">Sample 71</option>
+    
+    <option value="72">Sample 72</option>
+    
+    <option value="73">Sample 73</option>
+    
+    <option value="74">Sample 74</option>
+    
+    <option value="75">Sample 75</option>
+    
+    <option value="76">Sample 76</option>
+    
+    <option value="77">Sample 77</option>
+    
+    <option value="78">Sample 78</option>
+    
+    <option value="79">Sample 79</option>
+    
+    <option value="80">Sample 80</option>
+    
+    <option value="81">Sample 81</option>
+    
+    <option value="82">Sample 82</option>
+    
+    <option value="83">Sample 83</option>
+    
+    <option value="84">Sample 84</option>
+    
+    <option value="85">Sample 85</option>
+    
+    <option value="86">Sample 86</option>
+    
+    <option value="87">Sample 87</option>
+    
+    <option value="88">Sample 88</option>
+    
+    <option value="89">Sample 89</option>
+    
+    <option value="90">Sample 90</option>
+    
+    <option value="91">Sample 91</option>
+    
+    <option value="92">Sample 92</option>
+    
+    <option value="93">Sample 93</option>
+    
+    <option value="94">Sample 94</option>
+    
+    <option value="95">Sample 95</option>
+    
+    <option value="96">Sample 96</option>
+    
+    <option value="97">Sample 97</option>
+    
+    <option value="98">Sample 98</option>
+    
+    <option value="99">Sample 99</option>
+    
+  </select>
+  <select id="modelSelect2" onchange="updateMidiPlayers('2')">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
+
+    <option value="0">Mute</option>
+    <option value="1">MuteGenre1</option>
+    <option value="2">MuteGenre2</option>
+  </select>
+  <select id="betaSelect2" onchange="updateMidiPlayers('2')">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <br>
+
+    <h7>Not Muted</h7>
+    <br>
+    <midi-player id="midiPlayer2NotMuted" sound-font visualizer="#midiVisualizer2NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer2NotMuted"></midi-visualizer>
+    <br>
+
+    <h7>Muted</h7>
+    <br>
+    <midi-player id="midiPlayer2Muted" sound-font visualizer="#midiVisualizer2Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer2Muted"></midi-visualizer>
+  </div>
+</div>
+<br>
+
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 4</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+  <h3 style="font-weight: bold;">Toms</h3>
+  <hr>
+  <select id="sampleSelect3" onchange="updateMidiPlayers('3')">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+    <option value="20">Sample 20</option>
+    
+    <option value="21">Sample 21</option>
+    
+    <option value="22">Sample 22</option>
+    
+    <option value="23">Sample 23</option>
+    
+    <option value="24">Sample 24</option>
+    
+    <option value="25">Sample 25</option>
+    
+    <option value="26">Sample 26</option>
+    
+    <option value="27">Sample 27</option>
+    
+    <option value="28">Sample 28</option>
+    
+    <option value="29">Sample 29</option>
+    
+    <option value="30">Sample 30</option>
+    
+    <option value="31">Sample 31</option>
+    
+    <option value="32">Sample 32</option>
+    
+    <option value="33">Sample 33</option>
+    
+    <option value="34">Sample 34</option>
+    
+    <option value="35">Sample 35</option>
+    
+    <option value="36">Sample 36</option>
+    
+    <option value="37">Sample 37</option>
+    
+    <option value="38">Sample 38</option>
+    
+    <option value="39">Sample 39</option>
+    
+    <option value="40">Sample 40</option>
+    
+    <option value="41">Sample 41</option>
+    
+    <option value="42">Sample 42</option>
+    
+    <option value="43">Sample 43</option>
+    
+    <option value="44">Sample 44</option>
+    
+    <option value="45">Sample 45</option>
+    
+    <option value="46">Sample 46</option>
+    
+    <option value="47">Sample 47</option>
+    
+    <option value="48">Sample 48</option>
+    
+    <option value="49">Sample 49</option>
+    
+    <option value="50">Sample 50</option>
+    
+    <option value="51">Sample 51</option>
+    
+    <option value="52">Sample 52</option>
+    
+    <option value="53">Sample 53</option>
+    
+    <option value="54">Sample 54</option>
+    
+    <option value="55">Sample 55</option>
+    
+    <option value="56">Sample 56</option>
+    
+    <option value="57">Sample 57</option>
+    
+    <option value="58">Sample 58</option>
+    
+    <option value="59">Sample 59</option>
+    
+    <option value="60">Sample 60</option>
+    
+    <option value="61">Sample 61</option>
+    
+    <option value="62">Sample 62</option>
+    
+    <option value="63">Sample 63</option>
+    
+    <option value="64">Sample 64</option>
+    
+    <option value="65">Sample 65</option>
+    
+    <option value="66">Sample 66</option>
+    
+    <option value="67">Sample 67</option>
+    
+    <option value="68">Sample 68</option>
+    
+    <option value="69">Sample 69</option>
+    
+    <option value="70">Sample 70</option>
+    
+    <option value="71">Sample 71</option>
+    
+    <option value="72">Sample 72</option>
+    
+    <option value="73">Sample 73</option>
+    
+    <option value="74">Sample 74</option>
+    
+    <option value="75">Sample 75</option>
+    
+    <option value="76">Sample 76</option>
+    
+    <option value="77">Sample 77</option>
+    
+    <option value="78">Sample 78</option>
+    
+    <option value="79">Sample 79</option>
+    
+    <option value="80">Sample 80</option>
+    
+    <option value="81">Sample 81</option>
+    
+    <option value="82">Sample 82</option>
+    
+    <option value="83">Sample 83</option>
+    
+    <option value="84">Sample 84</option>
+    
+    <option value="85">Sample 85</option>
+    
+    <option value="86">Sample 86</option>
+    
+    <option value="87">Sample 87</option>
+    
+    <option value="88">Sample 88</option>
+    
+    <option value="89">Sample 89</option>
+    
+    <option value="90">Sample 90</option>
+    
+    <option value="91">Sample 91</option>
+    
+    <option value="92">Sample 92</option>
+    
+    <option value="93">Sample 93</option>
+    
+    <option value="94">Sample 94</option>
+    
+    <option value="95">Sample 95</option>
+    
+    <option value="96">Sample 96</option>
+    
+    <option value="97">Sample 97</option>
+    
+    <option value="98">Sample 98</option>
+    
+    <option value="99">Sample 99</option>
+    
+  </select>
+  <select id="modelSelect3" onchange="updateMidiPlayers('3')">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
+
+    <option value="0">Mute</option>
+    <option value="1">MuteGenre1</option>
+    <option value="2">MuteGenre2</option>
+  </select>
+  <select id="betaSelect3" onchange="updateMidiPlayers('3')">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <br>
+
+    <h7>Not Muted</h7>
+    <br>
+    <midi-player id="midiPlayer3NotMuted" sound-font visualizer="#midiVisualizer3NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer3NotMuted"></midi-visualizer>
+    <br>
+
+    <h7>Muted</h7>
+    <br>
+    <midi-player id="midiPlayer3Muted" sound-font visualizer="#midiVisualizer3Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer3Muted"></midi-visualizer>
+  </div>
+</div>
+<br>
+
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 5</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+  <h3 style="font-weight: bold;">Cymbals</h3>
+  <hr>
+  <select id="sampleSelect4" onchange="updateMidiPlayers('4')">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+    <option value="20">Sample 20</option>
+    
+    <option value="21">Sample 21</option>
+    
+    <option value="22">Sample 22</option>
+    
+    <option value="23">Sample 23</option>
+    
+    <option value="24">Sample 24</option>
+    
+    <option value="25">Sample 25</option>
+    
+    <option value="26">Sample 26</option>
+    
+    <option value="27">Sample 27</option>
+    
+    <option value="28">Sample 28</option>
+    
+    <option value="29">Sample 29</option>
+    
+    <option value="30">Sample 30</option>
+    
+    <option value="31">Sample 31</option>
+    
+    <option value="32">Sample 32</option>
+    
+    <option value="33">Sample 33</option>
+    
+    <option value="34">Sample 34</option>
+    
+    <option value="35">Sample 35</option>
+    
+    <option value="36">Sample 36</option>
+    
+    <option value="37">Sample 37</option>
+    
+    <option value="38">Sample 38</option>
+    
+    <option value="39">Sample 39</option>
+    
+    <option value="40">Sample 40</option>
+    
+    <option value="41">Sample 41</option>
+    
+    <option value="42">Sample 42</option>
+    
+    <option value="43">Sample 43</option>
+    
+    <option value="44">Sample 44</option>
+    
+    <option value="45">Sample 45</option>
+    
+    <option value="46">Sample 46</option>
+    
+    <option value="47">Sample 47</option>
+    
+    <option value="48">Sample 48</option>
+    
+    <option value="49">Sample 49</option>
+    
+    <option value="50">Sample 50</option>
+    
+    <option value="51">Sample 51</option>
+    
+    <option value="52">Sample 52</option>
+    
+    <option value="53">Sample 53</option>
+    
+    <option value="54">Sample 54</option>
+    
+    <option value="55">Sample 55</option>
+    
+    <option value="56">Sample 56</option>
+    
+    <option value="57">Sample 57</option>
+    
+    <option value="58">Sample 58</option>
+    
+    <option value="59">Sample 59</option>
+    
+    <option value="60">Sample 60</option>
+    
+    <option value="61">Sample 61</option>
+    
+    <option value="62">Sample 62</option>
+    
+    <option value="63">Sample 63</option>
+    
+    <option value="64">Sample 64</option>
+    
+    <option value="65">Sample 65</option>
+    
+    <option value="66">Sample 66</option>
+    
+    <option value="67">Sample 67</option>
+    
+    <option value="68">Sample 68</option>
+    
+    <option value="69">Sample 69</option>
+    
+    <option value="70">Sample 70</option>
+    
+    <option value="71">Sample 71</option>
+    
+    <option value="72">Sample 72</option>
+    
+    <option value="73">Sample 73</option>
+    
+    <option value="74">Sample 74</option>
+    
+    <option value="75">Sample 75</option>
+    
+    <option value="76">Sample 76</option>
+    
+    <option value="77">Sample 77</option>
+    
+    <option value="78">Sample 78</option>
+    
+    <option value="79">Sample 79</option>
+    
+    <option value="80">Sample 80</option>
+    
+    <option value="81">Sample 81</option>
+    
+    <option value="82">Sample 82</option>
+    
+    <option value="83">Sample 83</option>
+    
+    <option value="84">Sample 84</option>
+    
+    <option value="85">Sample 85</option>
+    
+    <option value="86">Sample 86</option>
+    
+    <option value="87">Sample 87</option>
+    
+    <option value="88">Sample 88</option>
+    
+    <option value="89">Sample 89</option>
+    
+    <option value="90">Sample 90</option>
+    
+    <option value="91">Sample 91</option>
+    
+    <option value="92">Sample 92</option>
+    
+    <option value="93">Sample 93</option>
+    
+    <option value="94">Sample 94</option>
+    
+    <option value="95">Sample 95</option>
+    
+    <option value="96">Sample 96</option>
+    
+    <option value="97">Sample 97</option>
+    
+    <option value="98">Sample 98</option>
+    
+    <option value="99">Sample 99</option>
+    
+  </select>
+  <select id="modelSelect4" onchange="updateMidiPlayers('4')">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
+
+    <option value="0">Mute</option>
+    <option value="1">MuteGenre1</option>
+    <option value="2">MuteGenre2</option>
+  </select>
+  <select id="betaSelect4" onchange="updateMidiPlayers('4')">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <br>
+
+    <h7>Not Muted</h7>
+    <br>
+    <midi-player id="midiPlayer4NotMuted" sound-font visualizer="#midiVisualizer4NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer4NotMuted"></midi-visualizer>
+    <br>
+
+    <h7>Muted</h7>
+    <br>
+    <midi-player id="midiPlayer4Muted" sound-font visualizer="#midiVisualizer4Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer4Muted"></midi-visualizer>
+  </div>
+</div>
+<br>
+
+
+
+  <script>
+  function updateMidiPlayers(VoiceGroup) {
+    var sampleSelect = document.getElementById('sampleSelect' + VoiceGroup).value;
+    var modelSelect = document.getElementById('modelSelect' + VoiceGroup).value;
+    var betaSelect = document.getElementById('betaSelect' + VoiceGroup).value;
+
+    // Assuming there are URLs or data that correspond to these selections
+    var voices = ["Kicks", "Snares", "Hats", "Toms", "Cymbals"];
+    var models = ["Mute", "MuteGenre1", "MuteGenre2"];
+    var betas = ["0.2", "0.5", "1.0"];
+
+    // Update the MIDI Player source for not muted
+    var midiUrlNoteMuted = "/assets/muted_generations/"+models[modelSelect]+"/" + betas[betaSelect] + "/" + voices[VoiceGroup] + "/not_muted/" + sampleSelect + ".mid";
+    var midiPlayerNotMuted = document.getElementById('midiPlayer' + VoiceGroup + 'NotMuted');
+    midiPlayerNotMuted.src = midiUrlNoteMuted;
+    var midiVisualizerNotMuted = document.getElementById('midiVisualizer' + VoiceGroup + 'NotMuted');
+    midiVisualizerNotMuted.setAttribute('src', midiPlayerNotMuted.src);
+
+    // Update the MIDI Player source for muted
+    var midiUrlNoteMuted = "/assets/muted_generations/"+models[modelSelect]+"/" + betas[betaSelect] + "/" + voices[VoiceGroup] + "/muted/" + sampleSelect + ".mid";
+    var midiPlayerMuted = document.getElementById('midiPlayer' + VoiceGroup + 'Muted');
+    midiPlayerMuted.src = midiUrlNoteMuted;
+    var midiVisualizerMuted = document.getElementById('midiVisualizer' + VoiceGroup + 'Muted');
+    midiVisualizerMuted.setAttribute('src', midiPlayerMuted.src);
+
+
+  }
+</script>
+
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2024 Anon  ISMIR2024. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+
+<!-- Scrolling Progress Bar -->
+<script type="text/javascript">
+  /*
+   * This JavaScript code has been adapted from the article 
+   * https://css-tricks.com/reading-position-indicator/ authored by Pankaj Parashar, 
+   * published on the website https://css-tricks.com on the 7th of May, 2014.
+   * Couple of changes were made to the original code to make it compatible 
+   * with the `al-foio` theme.
+   */
+  const progressBar = $("#progress");
+  /*
+   * We set up the bar after all elements are done loading.
+   * In some cases, if the images in the page are larger than the intended
+   * size they'll have on the page, they'll be resized via CSS to accomodate
+   * the desired size. This mistake, however, breaks the computations as the
+   * scroll size is computed as soon as the elements finish loading.
+   * To account for this, a minimal delay was introduced before computing the
+   * values.
+   */
+  window.onload = function () {
+    setTimeout(progressBarSetup, 50);
+  };
+  /*
+   * We set up the bar according to the browser.
+   * If the browser supports the progress element we use that.
+   * Otherwise, we resize the bar thru CSS styling
+   */
+  function progressBarSetup() {
+    if ("max" in document.createElement("progress")) {
+      initializeProgressElement();
+      $(document).on("scroll", function() {
+        progressBar.attr({ value: getCurrentScrollPosition() });
+      });
+      $(window).on("resize", initializeProgressElement);
+    } else {
+      resizeProgressBar();
+      $(document).on("scroll", resizeProgressBar);
+      $(window).on("resize", resizeProgressBar);
+    }
+  }
+  /*
+   * The vertical scroll position is the same as the number of pixels that
+   * are hidden from view above the scrollable area. Thus, a value > 0 is
+   * how much the user has scrolled from the top
+   */
+  function getCurrentScrollPosition() {
+    return $(window).scrollTop();
+  }
+
+  function initializeProgressElement() {
+    let navbarHeight = $("#navbar").outerHeight(true);
+    $("body").css({ "padding-top": navbarHeight });
+    $("progress-container").css({ "padding-top": navbarHeight });
+    progressBar.css({ top: navbarHeight });
+    progressBar.attr({
+      max: getDistanceToScroll(),
+      value: getCurrentScrollPosition(),
+    });
+  }
+  /*
+   * The offset between the html document height and the browser viewport
+   * height will be greater than zero if vertical scroll is possible.
+   * This is the distance the user can scroll
+   */
+  function getDistanceToScroll() {
+    return $(document).height() - $(window).height();
+  }
+
+  function resizeProgressBar() {
+    progressBar.css({ width: getWidthPercentage() + "%" });
+  }
+  // The scroll ratio equals the percentage to resize the bar
+  function getWidthPercentage() {
+    return (getCurrentScrollPosition() / getDistanceToScroll()) * 100;
+  }
+</script>
+
+  </body>
+</html>
