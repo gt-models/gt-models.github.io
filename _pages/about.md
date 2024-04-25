@@ -36,6 +36,8 @@ The following video is a snippet of the recording made by the organizers.
   Your browser does not support the video tag.
 </video>
 
+<br>
+
 The following video is a short phone recording. As mentioned above, the full video with good audio quality will be made available.
 
 <video width="300" height="200" controls>
@@ -116,7 +118,9 @@ are then synthesized using a drum synthesizer (left).
   - [Test set reconstructed generations]({{site.baseurl}}/generated_examples/reconstructed_samples/)
   - [Random generations]({{site.baseurl}}/generated_examples/random_samples/)
   - [Interpolation samples]({{site.baseurl}}/generated_examples/interpolated_samples/)
-
+  
+  <br>
+  
 - Resources to download, access and explore the trained models: 
   - [Trained Models: Access weights, source code, and API]({{site.baseurl}}/resources/trained_models/)
   - [UMAP analysis: Visualize the latent space]({{site.baseurl}}/further_analysis/umap/)
