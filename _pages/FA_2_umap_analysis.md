@@ -10,7 +10,7 @@ horizontal: false
 
 <br/><br/>
 
-# **UMAP Analysis**
+# **UMAP**
 ---
 
 The following plots are the result of applying the [UMAP](https://umap-learn.readthedocs.io/en/latest/) dimension reduction 
@@ -21,5 +21,3 @@ algorithm to the encodings obtained from the `test set'. The maps are generated 
 
 <br/><br/>
 
-# **Observations**
----
