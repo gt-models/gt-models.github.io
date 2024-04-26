@@ -35,4 +35,5 @@ Moreover, when applicable, you can also control the generation of the patterns u
 In this notebook, you can interpolate between two patterns to generate new patterns.
 
 
-<img src="{{ site.baseurl }}/assets/img/latent_interpolation.png" alt="interpolation" style="width: 500px;"/>
+<img src="{{ site.baseurl }}/assets/img/latent_interpolation2.png" alt="interpolation" style="width: 400px;"/>
+<img src="{{ site.baseurl }}/assets/img/latent_interpolation.png" alt="interpolation" style="width: 400px;"/>
