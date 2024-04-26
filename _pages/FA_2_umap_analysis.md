@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_no_title
 title: UMAP Analysis
 permalink: /further_analysis/umap/
 description: 

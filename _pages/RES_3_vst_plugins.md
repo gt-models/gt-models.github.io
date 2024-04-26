@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_no_title
 title: Source Code and VST Plugins
 permalink: /resources/source_code_and_vst_plugins/
 description: 

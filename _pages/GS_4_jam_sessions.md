@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page_no_title
 title: "Interpolated Test Samples"
 num_examples: 50
 permalink: /generated_examples/jam_session_recordings/

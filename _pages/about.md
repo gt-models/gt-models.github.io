@@ -127,7 +127,7 @@ are then synthesized using a drum synthesizer (left).
 - Resources to download, access and explore the trained models: 
   - [Trained Models: Access weights, source code, and API]({{site.baseurl}}/resources/trained_models/)
   - [UMAP analysis: Visualize the latent space]({{site.baseurl}}/further_analysis/umap/)
-  - [Colab Notebooks: Quickly interact with models]({{site.baseurl}}/resources/colab_notebooks/) to quickly interact with the models
+  - [Colab Notebooks: Quickly interact with models]({{site.baseurl}}/resources/colab_notebooks/) 
   - [VST Plugins: Deployed in real-time system]({{site.baseurl}}/resources/source_code_and_vst_plugins/)
   - [Genre Classifier: Access weights, source code, and API]({{site.baseurl}}/further_analysis/genre_classifier_model/)
 
