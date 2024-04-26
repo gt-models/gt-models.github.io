@@ -19,7 +19,7 @@ horizontal: false
 > The source code will be provided as a git repository in the final version.
 > In the meantime, you can download the source code as a zip file.
 
-[!!! UPLOAD ZIP !!!](/assets/additional/source_code/source_code.zip){: .btn}
+[Source Code](/assets/source_code_temp.zip){: .btn}
  
 > **Note**
 > This section will be dedicated to the trained generative models.
