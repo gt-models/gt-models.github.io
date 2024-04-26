@@ -11,7 +11,7 @@ children:
     permalink: /further_analysis/umap/
   - title: Colab Notebooks (Quick Interaction)
     permalink: /resources/colab_notebooks/
-  - title: VST Plugins (Real-time Deployment)
+  - title: Source Code and VST Deployment
     permalink: /resources/source_code_and_vst_plugins/
   - title: divider
   
