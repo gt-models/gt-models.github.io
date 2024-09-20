@@ -13,6 +13,21 @@ layout: default
   <article>
 <!--check if page.toc then include toc.html-->
     {{ content }}
+
+<div>
+  <button onclick="copyEmbedCode()">Embed</button>
+  <input type="text" id="embedCode" value='<iframe src="{{ page.url }}" width="100%" height="400px"></iframe>' readonly />
+</div>
+
+<script>
+  function copyEmbedCode() {
+    var copyText = document.getElementById("embedCode");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Embed code copied to clipboard: " + copyText.value);
+  }
+</script>
+
   </article>
 
   <style>
