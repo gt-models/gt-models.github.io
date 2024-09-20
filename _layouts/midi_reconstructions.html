@@ -12,7 +12,53 @@ layout: default
 
   <article>
 <!--check if page.toc then include toc.html-->
-    {{ content }}
+    
+<div>
+  <button onclick="copyEmbedCode()">Embed</button>
+  <input type="text" id="embedCode" value='<iframe src="{{ page.url }}" width="100%" height="400px" onload="hideTopContent(this)"></iframe>' readonly />
+</div>
+
+<div id="embedContent">
+  <!-- This is where the content below the embed button will go -->
+</div>
+
+<script>
+  function copyEmbedCode() {
+    var copyText = document.getElementById("embedCode");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Embed code copied to clipboard: " + copyText.value);
+  }
+
+  function hideTopContent(iframe) {
+    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
+  }
+</script>
+
+<div>
+  <button onclick="copyEmbedCode()">Embed</button>
+  <input type="text" id="embedCode" value='<iframe src="{{ site.url }}{{ page.url }}" width="100%" height="400px" onload="hideTopContent(this)"></iframe>' readonly />
+</div>
+
+<div id="embedContent">
+  <!-- This is where the content below the embed button will go -->
+</div>
+
+<script>
+  function copyEmbedCode() {
+    var copyText = document.getElementById("embedCode");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Embed code copied to clipboard: " + copyText.value);
+  }
+
+  function hideTopContent(iframe) {
+    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
+  }
+</script>
+{{ content }}
+</div>
+</div>
 
 <div>
   <button onclick="copyEmbedCode()">Embed</button>
