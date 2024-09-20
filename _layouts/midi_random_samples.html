@@ -38,14 +38,14 @@ layout: default
   <script src="https://cdn.jsdelivr.net/npm/focus-visible@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
 
-  {% for genre in page.genres %}
+  {% for model in page.models %}
     <br><br><br>
-    <h3 style="font-weight: bold;">{{ genre }}</h3>
+    <h3 style="font-weight: bold;">{{ model }}</h3>
     <hr>
 
     <!-- Shared MIDI File Selector -->
-    <label for="midiSelect{{ genre }}">Select MIDI File for {{ genre }}:</label>
-    <select id="midiSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+    <label for="midiSelect{{ model }}">Select MIDI File for {{ model }}:</label>
+    <select id="midiSelect{{ model }}" onchange="updateMidiSources('{{ model }}')">
       <option value="" selected disabled>Select MIDI File</option>
       {% for i in (1..100) %}
         <option value="{{ i }}">MIDI {{ i }}</option>
@@ -53,8 +53,8 @@ layout: default
     </select>
 
     <!-- Beta Value Selector -->
-    <label for="betaSelect{{ genre }}">Select Beta:</label>
-    <select id="betaSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+    <label for="betaSelect{{ model }}">Select Beta:</label>
+    <select id="betaSelect{{ model }}" onchange="updateMidiSources('{{ model }}')">
       <option value="" selected disabled>Select Beta</option>
       <option value="1.0">1.0</option>
       <option value="0.5">0.5</option>
@@ -63,23 +63,23 @@ layout: default
 
     <!-- Players Row -->
     <div class="player-container">
-      <midi-player id="midiPlayer{{ genre }}" sound-font visualizer="#myVisualizer{{ genre }}"></midi-player>
-      <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}"></midi-visualizer>
+      <midi-player id="midiPlayer{{ model }}" sound-font visualizer="#myVisualizer{{ model }}"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizer{{ model }}"></midi-visualizer>
     </div>
 
   {% endfor %}
 
   <script>
-    function updateMidiSources(genre) {
-      var midiIndex = document.getElementById('midiSelect' + genre).value;
-      var betaValue = document.getElementById('betaSelect' + genre).value;
+    function updateMidiSources(model) {
+      var midiIndex = document.getElementById('midiSelect' + model).value;
+      var betaValue = document.getElementById('betaSelect' + model).value;
       if (!midiIndex || !betaValue) return; // Prevent update if selections are not complete
       var subsets = ["Base", "Mute", "mute_genre1", "mute_genre2"];
       subsets.forEach(function(subset) {
-        var midiPlayer = document.getElementById('midiPlayer' + genre);
-        var visualizerElement = document.getElementById('myVisualizer' + genre);
+        var midiPlayer = document.getElementById('midiPlayer' + model);
+        var visualizerElement = document.getElementById('myVisualizer' + model);
         var filePrefix = betaValue + "/"; // Adjust path based on subset and beta
-        midiPlayer.src = "{{ site.baseurl }}/{{ page.root_dir }}/" + genre + "/" + filePrefix + "/All_Samples/" + midiIndex + ".mid";
+        midiPlayer.src = "{{ site.baseurl }}/{{ page.root_dir }}/" + model + "/" + filePrefix + "/All_Samples/" + midiIndex + ".mid";
         visualizerElement.setAttribute('src', midiPlayer.src); // Update visualizer source to match player
       });
     }
