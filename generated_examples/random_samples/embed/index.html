@@ -23,157 +23,986 @@
       width: auto;
       height: auto;
     }
+    h4 {
+      font-size: 1em;
+    }
+    .player-container {
+      display: flex;
+      justify-content: start;
+      gap: 20px;
+      flex-basis: 100%;
+    }
   </style>
 
   <!-- MIDI Player Integration -->
   <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/focus-visible@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
 
-  <!-- Genre Selector Dropdown -->
-  <select id="genreSelect" onchange="updateMidiSources()">
-    <option value="" selected disabled>Select Genre</option>
-    
+  
+    <br><br><br>
+    <h3 style="font-weight: bold;">Base</h3>
+    <hr>
+
+    <!-- Shared MIDI File Selector -->
+    <label for="midiSelectBase">Select MIDI File for Base:</label>
+    <select id="midiSelectBase" onchange="updateMidiSources('Base')">
+      <option value="" selected disabled>Select MIDI File</option>
+      
+        <option value="1">MIDI 1</option>
+      
+        <option value="2">MIDI 2</option>
+      
+        <option value="3">MIDI 3</option>
+      
+        <option value="4">MIDI 4</option>
+      
+        <option value="5">MIDI 5</option>
+      
+        <option value="6">MIDI 6</option>
+      
+        <option value="7">MIDI 7</option>
+      
+        <option value="8">MIDI 8</option>
+      
+        <option value="9">MIDI 9</option>
+      
+        <option value="10">MIDI 10</option>
+      
+        <option value="11">MIDI 11</option>
+      
+        <option value="12">MIDI 12</option>
+      
+        <option value="13">MIDI 13</option>
+      
+        <option value="14">MIDI 14</option>
+      
+        <option value="15">MIDI 15</option>
+      
+        <option value="16">MIDI 16</option>
+      
+        <option value="17">MIDI 17</option>
+      
+        <option value="18">MIDI 18</option>
+      
+        <option value="19">MIDI 19</option>
+      
+        <option value="20">MIDI 20</option>
+      
+        <option value="21">MIDI 21</option>
+      
+        <option value="22">MIDI 22</option>
+      
+        <option value="23">MIDI 23</option>
+      
+        <option value="24">MIDI 24</option>
+      
+        <option value="25">MIDI 25</option>
+      
+        <option value="26">MIDI 26</option>
+      
+        <option value="27">MIDI 27</option>
+      
+        <option value="28">MIDI 28</option>
+      
+        <option value="29">MIDI 29</option>
+      
+        <option value="30">MIDI 30</option>
+      
+        <option value="31">MIDI 31</option>
+      
+        <option value="32">MIDI 32</option>
+      
+        <option value="33">MIDI 33</option>
+      
+        <option value="34">MIDI 34</option>
+      
+        <option value="35">MIDI 35</option>
+      
+        <option value="36">MIDI 36</option>
+      
+        <option value="37">MIDI 37</option>
+      
+        <option value="38">MIDI 38</option>
+      
+        <option value="39">MIDI 39</option>
+      
+        <option value="40">MIDI 40</option>
+      
+        <option value="41">MIDI 41</option>
+      
+        <option value="42">MIDI 42</option>
+      
+        <option value="43">MIDI 43</option>
+      
+        <option value="44">MIDI 44</option>
+      
+        <option value="45">MIDI 45</option>
+      
+        <option value="46">MIDI 46</option>
+      
+        <option value="47">MIDI 47</option>
+      
+        <option value="48">MIDI 48</option>
+      
+        <option value="49">MIDI 49</option>
+      
+        <option value="50">MIDI 50</option>
+      
+        <option value="51">MIDI 51</option>
+      
+        <option value="52">MIDI 52</option>
+      
+        <option value="53">MIDI 53</option>
+      
+        <option value="54">MIDI 54</option>
+      
+        <option value="55">MIDI 55</option>
+      
+        <option value="56">MIDI 56</option>
+      
+        <option value="57">MIDI 57</option>
+      
+        <option value="58">MIDI 58</option>
+      
+        <option value="59">MIDI 59</option>
+      
+        <option value="60">MIDI 60</option>
+      
+        <option value="61">MIDI 61</option>
+      
+        <option value="62">MIDI 62</option>
+      
+        <option value="63">MIDI 63</option>
+      
+        <option value="64">MIDI 64</option>
+      
+        <option value="65">MIDI 65</option>
+      
+        <option value="66">MIDI 66</option>
+      
+        <option value="67">MIDI 67</option>
+      
+        <option value="68">MIDI 68</option>
+      
+        <option value="69">MIDI 69</option>
+      
+        <option value="70">MIDI 70</option>
+      
+        <option value="71">MIDI 71</option>
+      
+        <option value="72">MIDI 72</option>
+      
+        <option value="73">MIDI 73</option>
+      
+        <option value="74">MIDI 74</option>
+      
+        <option value="75">MIDI 75</option>
+      
+        <option value="76">MIDI 76</option>
+      
+        <option value="77">MIDI 77</option>
+      
+        <option value="78">MIDI 78</option>
+      
+        <option value="79">MIDI 79</option>
+      
+        <option value="80">MIDI 80</option>
+      
+        <option value="81">MIDI 81</option>
+      
+        <option value="82">MIDI 82</option>
+      
+        <option value="83">MIDI 83</option>
+      
+        <option value="84">MIDI 84</option>
+      
+        <option value="85">MIDI 85</option>
+      
+        <option value="86">MIDI 86</option>
+      
+        <option value="87">MIDI 87</option>
+      
+        <option value="88">MIDI 88</option>
+      
+        <option value="89">MIDI 89</option>
+      
+        <option value="90">MIDI 90</option>
+      
+        <option value="91">MIDI 91</option>
+      
+        <option value="92">MIDI 92</option>
+      
+        <option value="93">MIDI 93</option>
+      
+        <option value="94">MIDI 94</option>
+      
+        <option value="95">MIDI 95</option>
+      
+        <option value="96">MIDI 96</option>
+      
+        <option value="97">MIDI 97</option>
+      
+        <option value="98">MIDI 98</option>
+      
+        <option value="99">MIDI 99</option>
+      
+        <option value="100">MIDI 100</option>
+      
+    </select>
+
+    <!-- Beta Value Selector -->
+    <label for="betaSelectBase">Select Beta:</label>
+    <select id="betaSelectBase" onchange="updateMidiSources('Base')">
+      <option value="" selected disabled>Select Beta</option>
+      <option value="1.0">1.0</option>
+      <option value="0.5">0.5</option>
+      <option value="0.2">0.2</option>
+    </select>
+
+    <!-- Model Selector -->
+    <label for="modelSelectBase">Select Model:</label>
+    <select id="modelSelectBase" onchange="updateMidiSources('Base')">
+      <option value="" selected disabled>Select Model</option>
       <option value="Base">Base</option>
-    
       <option value="Mute">Mute</option>
-    
-      <option value="MuteGenre1">MuteGenre1</option>
-    
-      <option value="MuteGenre2">MuteGenre2</option>
-    
-  </select>
+      <option value="mute_genre1">Mute Genre 1</option>
+      <option value="mute_genre2">Mute Genre 2</option>
+    </select>
 
-  <!-- MIDI File Selector -->
-  <select id="midiSelect" onchange="updateMidiSources()">
-    <option value="" selected disabled>Select MIDI File</option>
-    
-      <option value="1">MIDI 1</option>
-    
-      <option value="2">MIDI 2</option>
-    
-      <option value="3">MIDI 3</option>
-    
-      <option value="4">MIDI 4</option>
-    
-      <option value="5">MIDI 5</option>
-    
-      <option value="6">MIDI 6</option>
-    
-      <option value="7">MIDI 7</option>
-    
-      <option value="8">MIDI 8</option>
-    
-      <option value="9">MIDI 9</option>
-    
-      <option value="10">MIDI 10</option>
-    
-      <option value="11">MIDI 11</option>
-    
-      <option value="12">MIDI 12</option>
-    
-      <option value="13">MIDI 13</option>
-    
-      <option value="14">MIDI 14</option>
-    
-      <option value="15">MIDI 15</option>
-    
-      <option value="16">MIDI 16</option>
-    
-      <option value="17">MIDI 17</option>
-    
-      <option value="18">MIDI 18</option>
-    
-      <option value="19">MIDI 19</option>
-    
-      <option value="20">MIDI 20</option>
-    
-      <option value="21">MIDI 21</option>
-    
-      <option value="22">MIDI 22</option>
-    
-      <option value="23">MIDI 23</option>
-    
-      <option value="24">MIDI 24</option>
-    
-      <option value="25">MIDI 25</option>
-    
-      <option value="26">MIDI 26</option>
-    
-      <option value="27">MIDI 27</option>
-    
-      <option value="28">MIDI 28</option>
-    
-      <option value="29">MIDI 29</option>
-    
-      <option value="30">MIDI 30</option>
-    
-      <option value="31">MIDI 31</option>
-    
-      <option value="32">MIDI 32</option>
-    
-      <option value="33">MIDI 33</option>
-    
-      <option value="34">MIDI 34</option>
-    
-      <option value="35">MIDI 35</option>
-    
-      <option value="36">MIDI 36</option>
-    
-      <option value="37">MIDI 37</option>
-    
-      <option value="38">MIDI 38</option>
-    
-      <option value="39">MIDI 39</option>
-    
-      <option value="40">MIDI 40</option>
-    
-      <option value="41">MIDI 41</option>
-    
-      <option value="42">MIDI 42</option>
-    
-      <option value="43">MIDI 43</option>
-    
-      <option value="44">MIDI 44</option>
-    
-      <option value="45">MIDI 45</option>
-    
-      <option value="46">MIDI 46</option>
-    
-      <option value="47">MIDI 47</option>
-    
-      <option value="48">MIDI 48</option>
-    
-      <option value="49">MIDI 49</option>
-    
-  </select>
+    <!-- Players Row -->
+    <div class="player-container">
+      <midi-player id="midiPlayerBase" sound-font visualizer="#myVisualizerBase"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerBase"></midi-visualizer>
+    </div>
 
-  <!-- Beta Value Selector -->
-  <select id="betaSelect" onchange="updateMidiSources()">
-    <option value="" selected disabled>Select Beta</option>
-    <option value="0.2">0.2</option>
-    <option value="0.5">0.5</option>
-    <option value="1.0">1.0</option>
-  </select>
+  
+    <br><br><br>
+    <h3 style="font-weight: bold;">Mute</h3>
+    <hr>
 
-  <div class="player-container">
-    <midi-player id="midiPlayer" sound-font visualizer="#midiVisualizer"></midi-player>
-    <midi-visualizer type="piano-roll" id="midiVisualizer"></midi-visualizer>
-  </div>
+    <!-- Shared MIDI File Selector -->
+    <label for="midiSelectMute">Select MIDI File for Mute:</label>
+    <select id="midiSelectMute" onchange="updateMidiSources('Mute')">
+      <option value="" selected disabled>Select MIDI File</option>
+      
+        <option value="1">MIDI 1</option>
+      
+        <option value="2">MIDI 2</option>
+      
+        <option value="3">MIDI 3</option>
+      
+        <option value="4">MIDI 4</option>
+      
+        <option value="5">MIDI 5</option>
+      
+        <option value="6">MIDI 6</option>
+      
+        <option value="7">MIDI 7</option>
+      
+        <option value="8">MIDI 8</option>
+      
+        <option value="9">MIDI 9</option>
+      
+        <option value="10">MIDI 10</option>
+      
+        <option value="11">MIDI 11</option>
+      
+        <option value="12">MIDI 12</option>
+      
+        <option value="13">MIDI 13</option>
+      
+        <option value="14">MIDI 14</option>
+      
+        <option value="15">MIDI 15</option>
+      
+        <option value="16">MIDI 16</option>
+      
+        <option value="17">MIDI 17</option>
+      
+        <option value="18">MIDI 18</option>
+      
+        <option value="19">MIDI 19</option>
+      
+        <option value="20">MIDI 20</option>
+      
+        <option value="21">MIDI 21</option>
+      
+        <option value="22">MIDI 22</option>
+      
+        <option value="23">MIDI 23</option>
+      
+        <option value="24">MIDI 24</option>
+      
+        <option value="25">MIDI 25</option>
+      
+        <option value="26">MIDI 26</option>
+      
+        <option value="27">MIDI 27</option>
+      
+        <option value="28">MIDI 28</option>
+      
+        <option value="29">MIDI 29</option>
+      
+        <option value="30">MIDI 30</option>
+      
+        <option value="31">MIDI 31</option>
+      
+        <option value="32">MIDI 32</option>
+      
+        <option value="33">MIDI 33</option>
+      
+        <option value="34">MIDI 34</option>
+      
+        <option value="35">MIDI 35</option>
+      
+        <option value="36">MIDI 36</option>
+      
+        <option value="37">MIDI 37</option>
+      
+        <option value="38">MIDI 38</option>
+      
+        <option value="39">MIDI 39</option>
+      
+        <option value="40">MIDI 40</option>
+      
+        <option value="41">MIDI 41</option>
+      
+        <option value="42">MIDI 42</option>
+      
+        <option value="43">MIDI 43</option>
+      
+        <option value="44">MIDI 44</option>
+      
+        <option value="45">MIDI 45</option>
+      
+        <option value="46">MIDI 46</option>
+      
+        <option value="47">MIDI 47</option>
+      
+        <option value="48">MIDI 48</option>
+      
+        <option value="49">MIDI 49</option>
+      
+        <option value="50">MIDI 50</option>
+      
+        <option value="51">MIDI 51</option>
+      
+        <option value="52">MIDI 52</option>
+      
+        <option value="53">MIDI 53</option>
+      
+        <option value="54">MIDI 54</option>
+      
+        <option value="55">MIDI 55</option>
+      
+        <option value="56">MIDI 56</option>
+      
+        <option value="57">MIDI 57</option>
+      
+        <option value="58">MIDI 58</option>
+      
+        <option value="59">MIDI 59</option>
+      
+        <option value="60">MIDI 60</option>
+      
+        <option value="61">MIDI 61</option>
+      
+        <option value="62">MIDI 62</option>
+      
+        <option value="63">MIDI 63</option>
+      
+        <option value="64">MIDI 64</option>
+      
+        <option value="65">MIDI 65</option>
+      
+        <option value="66">MIDI 66</option>
+      
+        <option value="67">MIDI 67</option>
+      
+        <option value="68">MIDI 68</option>
+      
+        <option value="69">MIDI 69</option>
+      
+        <option value="70">MIDI 70</option>
+      
+        <option value="71">MIDI 71</option>
+      
+        <option value="72">MIDI 72</option>
+      
+        <option value="73">MIDI 73</option>
+      
+        <option value="74">MIDI 74</option>
+      
+        <option value="75">MIDI 75</option>
+      
+        <option value="76">MIDI 76</option>
+      
+        <option value="77">MIDI 77</option>
+      
+        <option value="78">MIDI 78</option>
+      
+        <option value="79">MIDI 79</option>
+      
+        <option value="80">MIDI 80</option>
+      
+        <option value="81">MIDI 81</option>
+      
+        <option value="82">MIDI 82</option>
+      
+        <option value="83">MIDI 83</option>
+      
+        <option value="84">MIDI 84</option>
+      
+        <option value="85">MIDI 85</option>
+      
+        <option value="86">MIDI 86</option>
+      
+        <option value="87">MIDI 87</option>
+      
+        <option value="88">MIDI 88</option>
+      
+        <option value="89">MIDI 89</option>
+      
+        <option value="90">MIDI 90</option>
+      
+        <option value="91">MIDI 91</option>
+      
+        <option value="92">MIDI 92</option>
+      
+        <option value="93">MIDI 93</option>
+      
+        <option value="94">MIDI 94</option>
+      
+        <option value="95">MIDI 95</option>
+      
+        <option value="96">MIDI 96</option>
+      
+        <option value="97">MIDI 97</option>
+      
+        <option value="98">MIDI 98</option>
+      
+        <option value="99">MIDI 99</option>
+      
+        <option value="100">MIDI 100</option>
+      
+    </select>
+
+    <!-- Beta Value Selector -->
+    <label for="betaSelectMute">Select Beta:</label>
+    <select id="betaSelectMute" onchange="updateMidiSources('Mute')">
+      <option value="" selected disabled>Select Beta</option>
+      <option value="1.0">1.0</option>
+      <option value="0.5">0.5</option>
+      <option value="0.2">0.2</option>
+    </select>
+
+    <!-- Model Selector -->
+    <label for="modelSelectMute">Select Model:</label>
+    <select id="modelSelectMute" onchange="updateMidiSources('Mute')">
+      <option value="" selected disabled>Select Model</option>
+      <option value="Base">Base</option>
+      <option value="Mute">Mute</option>
+      <option value="mute_genre1">Mute Genre 1</option>
+      <option value="mute_genre2">Mute Genre 2</option>
+    </select>
+
+    <!-- Players Row -->
+    <div class="player-container">
+      <midi-player id="midiPlayerMute" sound-font visualizer="#myVisualizerMute"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMute"></midi-visualizer>
+    </div>
+
+  
+    <br><br><br>
+    <h3 style="font-weight: bold;">MuteGenre1</h3>
+    <hr>
+
+    <!-- Shared MIDI File Selector -->
+    <label for="midiSelectMuteGenre1">Select MIDI File for MuteGenre1:</label>
+    <select id="midiSelectMuteGenre1" onchange="updateMidiSources('MuteGenre1')">
+      <option value="" selected disabled>Select MIDI File</option>
+      
+        <option value="1">MIDI 1</option>
+      
+        <option value="2">MIDI 2</option>
+      
+        <option value="3">MIDI 3</option>
+      
+        <option value="4">MIDI 4</option>
+      
+        <option value="5">MIDI 5</option>
+      
+        <option value="6">MIDI 6</option>
+      
+        <option value="7">MIDI 7</option>
+      
+        <option value="8">MIDI 8</option>
+      
+        <option value="9">MIDI 9</option>
+      
+        <option value="10">MIDI 10</option>
+      
+        <option value="11">MIDI 11</option>
+      
+        <option value="12">MIDI 12</option>
+      
+        <option value="13">MIDI 13</option>
+      
+        <option value="14">MIDI 14</option>
+      
+        <option value="15">MIDI 15</option>
+      
+        <option value="16">MIDI 16</option>
+      
+        <option value="17">MIDI 17</option>
+      
+        <option value="18">MIDI 18</option>
+      
+        <option value="19">MIDI 19</option>
+      
+        <option value="20">MIDI 20</option>
+      
+        <option value="21">MIDI 21</option>
+      
+        <option value="22">MIDI 22</option>
+      
+        <option value="23">MIDI 23</option>
+      
+        <option value="24">MIDI 24</option>
+      
+        <option value="25">MIDI 25</option>
+      
+        <option value="26">MIDI 26</option>
+      
+        <option value="27">MIDI 27</option>
+      
+        <option value="28">MIDI 28</option>
+      
+        <option value="29">MIDI 29</option>
+      
+        <option value="30">MIDI 30</option>
+      
+        <option value="31">MIDI 31</option>
+      
+        <option value="32">MIDI 32</option>
+      
+        <option value="33">MIDI 33</option>
+      
+        <option value="34">MIDI 34</option>
+      
+        <option value="35">MIDI 35</option>
+      
+        <option value="36">MIDI 36</option>
+      
+        <option value="37">MIDI 37</option>
+      
+        <option value="38">MIDI 38</option>
+      
+        <option value="39">MIDI 39</option>
+      
+        <option value="40">MIDI 40</option>
+      
+        <option value="41">MIDI 41</option>
+      
+        <option value="42">MIDI 42</option>
+      
+        <option value="43">MIDI 43</option>
+      
+        <option value="44">MIDI 44</option>
+      
+        <option value="45">MIDI 45</option>
+      
+        <option value="46">MIDI 46</option>
+      
+        <option value="47">MIDI 47</option>
+      
+        <option value="48">MIDI 48</option>
+      
+        <option value="49">MIDI 49</option>
+      
+        <option value="50">MIDI 50</option>
+      
+        <option value="51">MIDI 51</option>
+      
+        <option value="52">MIDI 52</option>
+      
+        <option value="53">MIDI 53</option>
+      
+        <option value="54">MIDI 54</option>
+      
+        <option value="55">MIDI 55</option>
+      
+        <option value="56">MIDI 56</option>
+      
+        <option value="57">MIDI 57</option>
+      
+        <option value="58">MIDI 58</option>
+      
+        <option value="59">MIDI 59</option>
+      
+        <option value="60">MIDI 60</option>
+      
+        <option value="61">MIDI 61</option>
+      
+        <option value="62">MIDI 62</option>
+      
+        <option value="63">MIDI 63</option>
+      
+        <option value="64">MIDI 64</option>
+      
+        <option value="65">MIDI 65</option>
+      
+        <option value="66">MIDI 66</option>
+      
+        <option value="67">MIDI 67</option>
+      
+        <option value="68">MIDI 68</option>
+      
+        <option value="69">MIDI 69</option>
+      
+        <option value="70">MIDI 70</option>
+      
+        <option value="71">MIDI 71</option>
+      
+        <option value="72">MIDI 72</option>
+      
+        <option value="73">MIDI 73</option>
+      
+        <option value="74">MIDI 74</option>
+      
+        <option value="75">MIDI 75</option>
+      
+        <option value="76">MIDI 76</option>
+      
+        <option value="77">MIDI 77</option>
+      
+        <option value="78">MIDI 78</option>
+      
+        <option value="79">MIDI 79</option>
+      
+        <option value="80">MIDI 80</option>
+      
+        <option value="81">MIDI 81</option>
+      
+        <option value="82">MIDI 82</option>
+      
+        <option value="83">MIDI 83</option>
+      
+        <option value="84">MIDI 84</option>
+      
+        <option value="85">MIDI 85</option>
+      
+        <option value="86">MIDI 86</option>
+      
+        <option value="87">MIDI 87</option>
+      
+        <option value="88">MIDI 88</option>
+      
+        <option value="89">MIDI 89</option>
+      
+        <option value="90">MIDI 90</option>
+      
+        <option value="91">MIDI 91</option>
+      
+        <option value="92">MIDI 92</option>
+      
+        <option value="93">MIDI 93</option>
+      
+        <option value="94">MIDI 94</option>
+      
+        <option value="95">MIDI 95</option>
+      
+        <option value="96">MIDI 96</option>
+      
+        <option value="97">MIDI 97</option>
+      
+        <option value="98">MIDI 98</option>
+      
+        <option value="99">MIDI 99</option>
+      
+        <option value="100">MIDI 100</option>
+      
+    </select>
+
+    <!-- Beta Value Selector -->
+    <label for="betaSelectMuteGenre1">Select Beta:</label>
+    <select id="betaSelectMuteGenre1" onchange="updateMidiSources('MuteGenre1')">
+      <option value="" selected disabled>Select Beta</option>
+      <option value="1.0">1.0</option>
+      <option value="0.5">0.5</option>
+      <option value="0.2">0.2</option>
+    </select>
+
+    <!-- Model Selector -->
+    <label for="modelSelectMuteGenre1">Select Model:</label>
+    <select id="modelSelectMuteGenre1" onchange="updateMidiSources('MuteGenre1')">
+      <option value="" selected disabled>Select Model</option>
+      <option value="Base">Base</option>
+      <option value="Mute">Mute</option>
+      <option value="mute_genre1">Mute Genre 1</option>
+      <option value="mute_genre2">Mute Genre 2</option>
+    </select>
+
+    <!-- Players Row -->
+    <div class="player-container">
+      <midi-player id="midiPlayerMuteGenre1" sound-font visualizer="#myVisualizerMuteGenre1"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMuteGenre1"></midi-visualizer>
+    </div>
+
+  
+    <br><br><br>
+    <h3 style="font-weight: bold;">MuteGenre2</h3>
+    <hr>
+
+    <!-- Shared MIDI File Selector -->
+    <label for="midiSelectMuteGenre2">Select MIDI File for MuteGenre2:</label>
+    <select id="midiSelectMuteGenre2" onchange="updateMidiSources('MuteGenre2')">
+      <option value="" selected disabled>Select MIDI File</option>
+      
+        <option value="1">MIDI 1</option>
+      
+        <option value="2">MIDI 2</option>
+      
+        <option value="3">MIDI 3</option>
+      
+        <option value="4">MIDI 4</option>
+      
+        <option value="5">MIDI 5</option>
+      
+        <option value="6">MIDI 6</option>
+      
+        <option value="7">MIDI 7</option>
+      
+        <option value="8">MIDI 8</option>
+      
+        <option value="9">MIDI 9</option>
+      
+        <option value="10">MIDI 10</option>
+      
+        <option value="11">MIDI 11</option>
+      
+        <option value="12">MIDI 12</option>
+      
+        <option value="13">MIDI 13</option>
+      
+        <option value="14">MIDI 14</option>
+      
+        <option value="15">MIDI 15</option>
+      
+        <option value="16">MIDI 16</option>
+      
+        <option value="17">MIDI 17</option>
+      
+        <option value="18">MIDI 18</option>
+      
+        <option value="19">MIDI 19</option>
+      
+        <option value="20">MIDI 20</option>
+      
+        <option value="21">MIDI 21</option>
+      
+        <option value="22">MIDI 22</option>
+      
+        <option value="23">MIDI 23</option>
+      
+        <option value="24">MIDI 24</option>
+      
+        <option value="25">MIDI 25</option>
+      
+        <option value="26">MIDI 26</option>
+      
+        <option value="27">MIDI 27</option>
+      
+        <option value="28">MIDI 28</option>
+      
+        <option value="29">MIDI 29</option>
+      
+        <option value="30">MIDI 30</option>
+      
+        <option value="31">MIDI 31</option>
+      
+        <option value="32">MIDI 32</option>
+      
+        <option value="33">MIDI 33</option>
+      
+        <option value="34">MIDI 34</option>
+      
+        <option value="35">MIDI 35</option>
+      
+        <option value="36">MIDI 36</option>
+      
+        <option value="37">MIDI 37</option>
+      
+        <option value="38">MIDI 38</option>
+      
+        <option value="39">MIDI 39</option>
+      
+        <option value="40">MIDI 40</option>
+      
+        <option value="41">MIDI 41</option>
+      
+        <option value="42">MIDI 42</option>
+      
+        <option value="43">MIDI 43</option>
+      
+        <option value="44">MIDI 44</option>
+      
+        <option value="45">MIDI 45</option>
+      
+        <option value="46">MIDI 46</option>
+      
+        <option value="47">MIDI 47</option>
+      
+        <option value="48">MIDI 48</option>
+      
+        <option value="49">MIDI 49</option>
+      
+        <option value="50">MIDI 50</option>
+      
+        <option value="51">MIDI 51</option>
+      
+        <option value="52">MIDI 52</option>
+      
+        <option value="53">MIDI 53</option>
+      
+        <option value="54">MIDI 54</option>
+      
+        <option value="55">MIDI 55</option>
+      
+        <option value="56">MIDI 56</option>
+      
+        <option value="57">MIDI 57</option>
+      
+        <option value="58">MIDI 58</option>
+      
+        <option value="59">MIDI 59</option>
+      
+        <option value="60">MIDI 60</option>
+      
+        <option value="61">MIDI 61</option>
+      
+        <option value="62">MIDI 62</option>
+      
+        <option value="63">MIDI 63</option>
+      
+        <option value="64">MIDI 64</option>
+      
+        <option value="65">MIDI 65</option>
+      
+        <option value="66">MIDI 66</option>
+      
+        <option value="67">MIDI 67</option>
+      
+        <option value="68">MIDI 68</option>
+      
+        <option value="69">MIDI 69</option>
+      
+        <option value="70">MIDI 70</option>
+      
+        <option value="71">MIDI 71</option>
+      
+        <option value="72">MIDI 72</option>
+      
+        <option value="73">MIDI 73</option>
+      
+        <option value="74">MIDI 74</option>
+      
+        <option value="75">MIDI 75</option>
+      
+        <option value="76">MIDI 76</option>
+      
+        <option value="77">MIDI 77</option>
+      
+        <option value="78">MIDI 78</option>
+      
+        <option value="79">MIDI 79</option>
+      
+        <option value="80">MIDI 80</option>
+      
+        <option value="81">MIDI 81</option>
+      
+        <option value="82">MIDI 82</option>
+      
+        <option value="83">MIDI 83</option>
+      
+        <option value="84">MIDI 84</option>
+      
+        <option value="85">MIDI 85</option>
+      
+        <option value="86">MIDI 86</option>
+      
+        <option value="87">MIDI 87</option>
+      
+        <option value="88">MIDI 88</option>
+      
+        <option value="89">MIDI 89</option>
+      
+        <option value="90">MIDI 90</option>
+      
+        <option value="91">MIDI 91</option>
+      
+        <option value="92">MIDI 92</option>
+      
+        <option value="93">MIDI 93</option>
+      
+        <option value="94">MIDI 94</option>
+      
+        <option value="95">MIDI 95</option>
+      
+        <option value="96">MIDI 96</option>
+      
+        <option value="97">MIDI 97</option>
+      
+        <option value="98">MIDI 98</option>
+      
+        <option value="99">MIDI 99</option>
+      
+        <option value="100">MIDI 100</option>
+      
+    </select>
+
+    <!-- Beta Value Selector -->
+    <label for="betaSelectMuteGenre2">Select Beta:</label>
+    <select id="betaSelectMuteGenre2" onchange="updateMidiSources('MuteGenre2')">
+      <option value="" selected disabled>Select Beta</option>
+      <option value="1.0">1.0</option>
+      <option value="0.5">0.5</option>
+      <option value="0.2">0.2</option>
+    </select>
+
+    <!-- Model Selector -->
+    <label for="modelSelectMuteGenre2">Select Model:</label>
+    <select id="modelSelectMuteGenre2" onchange="updateMidiSources('MuteGenre2')">
+      <option value="" selected disabled>Select Model</option>
+      <option value="Base">Base</option>
+      <option value="Mute">Mute</option>
+      <option value="mute_genre1">Mute Genre 1</option>
+      <option value="mute_genre2">Mute Genre 2</option>
+    </select>
+
+    <!-- Players Row -->
+    <div class="player-container">
+      <midi-player id="midiPlayerMuteGenre2" sound-font visualizer="#myVisualizerMuteGenre2"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMuteGenre2"></midi-visualizer>
+    </div>
+
+  
 
   <script>
-    function updateMidiSources() {
-      var genre = document.getElementById('genreSelect').value;
-      var midiIndex = document.getElementById('midiSelect').value;
-      var betaValue = document.getElementById('betaSelect').value;
+    function updateMidiSources(genre) {
+      var midiIndex = document.getElementById('midiSelect' + genre).value;
+      var betaValue = document.getElementById('betaSelect' + genre).value;
+      var modelValue = document.getElementById('modelSelect' + genre).value;
+      if (!midiIndex || !betaValue || !modelValue) return; // Prevent update if selections are not complete
 
-      if (genre && midiIndex && betaValue) {
-        var midiUrl = "/assets/random_samples/" + genre + "/" + midiIndex + ".mid";
-        document.getElementById('midiPlayer').src = midiUrl;
-        document.getElementById('midiVisualizer').setAttribute('src', midiUrl);
-      }
+      var midiPlayer = document.getElementById('midiPlayer' + genre);
+      var visualizerElement = document.getElementById('myVisualizer' + genre);
+      var filePrefix = betaValue + "/" + modelValue; // Adjust path based on beta and model
+      midiPlayer.src = "/assets/midi_random_gens//" + genre + "/" + filePrefix + "/All_Samples/" + midiIndex + ".mid";
+      visualizerElement.setAttribute('src', midiPlayer.src); // Update visualizer source to match player
     }
   </script>
-
 </div>
 </body></html>

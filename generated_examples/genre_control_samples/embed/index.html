@@ -24,12 +24,17 @@
 
   <!-- MIDI Player Integration -->
   <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/midi-player@1.5.0"></script>
   <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
 
-  <!-- Genre Selector Dropdown -->
-  <select id="sourcegenreSelect" onchange="updateMidiSources()">
+<div class="VoiceGroup-section">
+<!--  <h3>VoiceGroup 1</h3> &lt;!&ndash; Use the 'plus' filter to add 1 &ndash;&gt;-->
+
+  <hr>
+  <select id="sourcegenreSelect" onchange="updateMidiPlayers()">
     <option selected disabled>Select Original Genre</option> <!-- Default 'prompt' option -->
+<!--populate with page.Genres-->
     
     <option value="Afro">Afro</option>
     
@@ -50,8 +55,9 @@
     <option value="Rock">Rock</option>
     
   </select>
-  <select id="targetgenreSelect" onchange="updateMidiSources()">
+<select id="targetgenreSelect" onchange="updateMidiPlayers()">
     <option selected disabled>Select Target Genre</option> <!-- Default 'prompt' option -->
+<!--populate with page.Genres-->
     
     <option value="Afro">Afro</option>
     
@@ -73,9 +79,8 @@
     
   </select>
 
-  <!-- Sample Selector -->
-  <select id="sampleSelect" onchange="updateMidiSources()">
-    <option selected disabled>Select Sample</option>
+  <select id="sampleSelect" onchange="updateMidiPlayers()">
+    <option selected disabled>Select Sample</option> <!-- Default 'prompt' option -->
     
     <option value="0">Sample 0</option>
     
@@ -118,50 +123,71 @@
     <option value="19">Sample 19</option>
     
   </select>
+  <select id="modelSelect" onchange="updateMidiPlayers()">
+    <option selected disabled>Select Model</option> <!-- Default 'prompt' option -->
 
-  <!-- Model Selector -->
-  <select id="modelSelect" onchange="updateMidiSources()">
-    <option selected disabled>Select Model</option>
     <option value="0">MuteGenre1</option>
     <option value="1">MuteGenre2</option>
-  </select>
 
-  <!-- Beta Value Selector -->
-  <select id="betaSelect" onchange="updateMidiSources()">
-    <option selected disabled>Select Beta</option>
+  </select>
+  <select id="betaSelect" onchange="updateMidiPlayers()">
+    <option selected disabled>Select Beta</option> <!-- Default 'prompt' option -->
+
     <option value="0">0.2</option>
     <option value="1">0.5</option>
     <option value="2">1.0</option>
   </select>
 
   <div class="players">
+    <br>
+
     <h7>Original Genre</h7>
+    <br>
     <midi-player id="midiPlayerOriginal" sound-font visualizer="#midiVisualizerOriginal"></midi-player>
     <midi-visualizer type="piano-roll" id="midiVisualizerOriginal"></midi-visualizer>
+    <br>
 
     <h7>Target Genre</h7>
+    <br>
     <midi-player id="midiPlayerTarget" sound-font visualizer="#midiVisualizerTarget"></midi-player>
     <midi-visualizer type="piano-roll" id="midiVisualizerTarget"></midi-visualizer>
   </div>
+</div>
+<br>
+
 
   <script>
-    function updateMidiSources() {
-      var sourceGenre = document.getElementById('sourcegenreSelect').value;
-      var targetGenre = document.getElementById('targetgenreSelect').value;
-      var sample = document.getElementById('sampleSelect').value;
-      var model = document.getElementById('modelSelect').value;
-      var beta = document.getElementById('betaSelect').value;
+  function updateMidiPlayers() {
+    // print a message to the console
+    console.log('Updating MIDI Players');
 
-      var midiUrlOriginal = "/assets/genre_control_samples/" + sourceGenre + "/" + sample + ".mid";
-      var midiUrlTarget = "/assets/genre_control_samples/" + targetGenre + "/" + sample + ".mid";
+    var sourcegenreSelect = document.getElementById('sourcegenreSelect').value;
+    var targetgenreSelect = document.getElementById('targetgenreSelect').value;
+    var sampleSelect = document.getElementById('sampleSelect').value;
+    var modelSelect = document.getElementById('modelSelect').value;
+    var betaSelect = document.getElementById('betaSelect').value;
 
-      document.getElementById('midiPlayerOriginal').src = midiUrlOriginal;
-      document.getElementById('midiVisualizerOriginal').setAttribute('src', midiUrlOriginal);
+    // Assuming there are URLs or data that correspond to these selections
+    var models = ["MuteGenre1", "MuteGenre2"];
+    var betas = ["0.2", "0.5", "1.0"];
 
-      document.getElementById('midiPlayerTarget').src = midiUrlTarget;
-      document.getElementById('midiVisualizerTarget').setAttribute('src', midiUrlTarget);
-    }
-  </script>
+    // Update the MIDI Player source for not muted
+    var midiUrl = "/assets/genre_control_samples/"+sourcegenreSelect+"/" + sourcegenreSelect + "/"+models[modelSelect]+"/" + betas[betaSelect] + "/" + sampleSelect + ".mid";
+    var midiPlayerOriginal = document.getElementById('midiPlayerOriginal');
+    midiPlayerOriginal.src = midiUrl;
+    var midiVisualizerOriginal = document.getElementById('midiVisualizerOriginal');
+    midiVisualizerOriginal.setAttribute('src', midiPlayerOriginal.src);
+
+    // Update the MIDI Player source for muted
+    var midiUrl2 = "/assets/genre_control_samples/"+sourcegenreSelect+"/" + targetgenreSelect + "/"+models[modelSelect]+"/" + betas[betaSelect] + "/" + sampleSelect + ".mid";
+    var midiPlayerTarget = document.getElementById('midiPlayerTarget');
+    midiPlayerTarget.src = midiUrl2;
+    var midiVisualizerTarget = document.getElementById('midiVisualizerTarget');
+    midiVisualizerTarget.setAttribute('src', midiPlayerTarget.src);
+
+
+  }
+</script>
 
 </div>
 </body></html>
