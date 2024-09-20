@@ -1,0 +1,86 @@
+<div class="post">
+  <header class="post-header">
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  <style>
+    body {
+      background-color: #d3d3d3; /* Light grey background */
+    }
+    .midi-player, .midi-visualizer {
+      background-color: #4d4;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <!-- MIDI Player Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
+
+  <!-- Voice Group Selector Dropdown -->
+  {% for i in (0..4) %}
+  <div class="VoiceGroup-section">
+    <h3>{{ page.VoiceGroup[i] }}</h3>
+    <hr>
+
+    <!-- Sample Selector -->
+    <select id="sampleSelect{{ i }}" onchange="updateMidiPlayers('{{ i }}')">
+      <option selected disabled>Select Sample</option>
+      {% for j in (0..99) %}
+      <option value="{{ j }}">Sample {{ j }}</option>
+      {% endfor %}
+    </select>
+
+    <!-- Model Selector -->
+    <select id="modelSelect{{ i }}" onchange="updateMidiPlayers('{{ i }}')">
+      <option selected disabled>Select Model</option>
+      <option value="0">Mute</option>
+      <option value="1">MuteGenre1</option>
+      <option value="2">MuteGenre2</option>
+    </select>
+
+    <!-- Beta Value Selector -->
+    <select id="betaSelect{{ i }}" onchange="updateMidiPlayers('{{ i }}')">
+      <option selected disabled>Select Beta</option>
+      <option value="0.2">0.2</option>
+      <option value="0.5">0.5</option>
+      <option value="1.0">1.0</option>
+    </select>
+
+    <!-- Players -->
+    <h7>Not Muted</h7>
+    <midi-player id="midiPlayer{{ i }}NotMuted" sound-font visualizer="#midiVisualizer{{ i }}NotMuted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer{{ i }}NotMuted"></midi-visualizer>
+
+    <h7>Muted</h7>
+    <midi-player id="midiPlayer{{ i }}Muted" sound-font visualizer="#midiVisualizer{{ i }}Muted"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer{{ i }}Muted"></midi-visualizer>
+  </div>
+  <br>
+  {% endfor %}
+
+  <script>
+    function updateMidiPlayers(i) {
+      var sample = document.getElementById('sampleSelect' + i).value;
+      var model = document.getElementById('modelSelect' + i).value;
+      var beta = document.getElementById('betaSelect' + i).value;
+
+      var midiUrlNotMuted = "{{ site.baseurl }}/assets/muted_generations/Mute/" + sample + ".mid";
+      var midiUrlMuted = "{{ site.baseurl }}/assets/muted_generations/" + model + "/" + sample + ".mid";
+
+      document.getElementById('midiPlayer' + i + 'NotMuted').src = midiUrlNotMuted;
+      document.getElementById('midiVisualizer' + i + 'NotMuted').setAttribute('src', midiUrlNotMuted);
+
+      document.getElementById('midiPlayer' + i + 'Muted').src = midiUrlMuted;
+      document.getElementById('midiVisualizer' + i + 'Muted').setAttribute('src', midiUrlMuted);
+    }
+  </script>
+
+</div>

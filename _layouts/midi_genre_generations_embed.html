@@ -1,0 +1,93 @@
+<div class="post">
+  <header class="post-header">
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+
+  <article>
+    {{ content }}
+  </article>
+
+  <style>
+    body {
+      background-color: #d3d3d3; /* Light grey background */
+    }
+    .midi-player, .midi-visualizer {
+      background-color: #4d4;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <!-- MIDI Player Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
+
+  <!-- Genre Selector Dropdown -->
+  <select id="sourcegenreSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Original Genre</option> <!-- Default 'prompt' option -->
+    {% for genre in page.Genres %}
+    <option value="{{ genre }}">{{ genre }}</option>
+    {% endfor %}
+  </select>
+  <select id="targetgenreSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Target Genre</option> <!-- Default 'prompt' option -->
+    {% for genre in page.Genres %}
+    <option value="{{ genre }}">{{ genre }}</option>
+    {% endfor %}
+  </select>
+
+  <!-- Sample Selector -->
+  <select id="sampleSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Sample</option>
+    {% for j in (0..19) %}
+    <option value="{{ j }}">Sample {{ j }}</option>
+    {% endfor %}
+  </select>
+
+  <!-- Model Selector -->
+  <select id="modelSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Model</option>
+    <option value="0">MuteGenre1</option>
+    <option value="1">MuteGenre2</option>
+  </select>
+
+  <!-- Beta Value Selector -->
+  <select id="betaSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Beta</option>
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <h7>Original Genre</h7>
+    <midi-player id="midiPlayerOriginal" sound-font visualizer="#midiVisualizerOriginal"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizerOriginal"></midi-visualizer>
+
+    <h7>Target Genre</h7>
+    <midi-player id="midiPlayerTarget" sound-font visualizer="#midiVisualizerTarget"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizerTarget"></midi-visualizer>
+  </div>
+
+  <script>
+    function updateMidiSources() {
+      var sourceGenre = document.getElementById('sourcegenreSelect').value;
+      var targetGenre = document.getElementById('targetgenreSelect').value;
+      var sample = document.getElementById('sampleSelect').value;
+      var model = document.getElementById('modelSelect').value;
+      var beta = document.getElementById('betaSelect').value;
+
+      var midiUrlOriginal = "{{ site.baseurl }}/assets/genre_control_samples/" + sourceGenre + "/" + sample + ".mid";
+      var midiUrlTarget = "{{ site.baseurl }}/assets/genre_control_samples/" + targetGenre + "/" + sample + ".mid";
+
+      document.getElementById('midiPlayerOriginal').src = midiUrlOriginal;
+      document.getElementById('midiVisualizerOriginal').setAttribute('src', midiUrlOriginal);
+
+      document.getElementById('midiPlayerTarget').src = midiUrlTarget;
+      document.getElementById('midiVisualizerTarget').setAttribute('src', midiUrlTarget);
+    }
+  </script>
+
+</div>

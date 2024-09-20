@@ -1,5 +1,5 @@
 ---
-layout: embed_midi_interpolations
+layout: midi_interpolations_embed
 title: "Interpolated Test Samples"
 genres: ["Afro", "Disco", "Funk", "Hip-Hop", "Jazz", "Latin", "Pop", "Reggae", "Rock"]
 root_dir: "assets/midi_interpolation_5"
