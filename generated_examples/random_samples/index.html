@@ -1066,16 +1066,16 @@ That is, if you change the beta value, you shouldn’t expect the generations to
   
 
   <script>
-    function updateMidiSources(genre) {
-      var midiIndex = document.getElementById('midiSelect' + genre).value;
-      var betaValue = document.getElementById('betaSelect' + genre).value;
+    function updateMidiSources(model) {
+      var midiIndex = document.getElementById('midiSelect' + model).value;
+      var betaValue = document.getElementById('betaSelect' + model).value;
       if (!midiIndex || !betaValue) return; // Prevent update if selections are not complete
       var subsets = ["Base", "Mute", "mute_genre1", "mute_genre2"];
       subsets.forEach(function(subset) {
-        var midiPlayer = document.getElementById('midiPlayer' + genre);
-        var visualizerElement = document.getElementById('myVisualizer' + genre);
+        var midiPlayer = document.getElementById('midiPlayer' + model);
+        var visualizerElement = document.getElementById('myVisualizer' + model);
         var filePrefix = betaValue + "/"; // Adjust path based on subset and beta
-        midiPlayer.src = "/assets/midi_random_gens//" + genre + "/" + filePrefix + "/All_Samples/" + midiIndex + ".mid";
+        midiPlayer.src = "/assets/midi_random_gens//" + model + "/" + filePrefix + "/All_Samples/" + midiIndex + ".mid";
         visualizerElement.setAttribute('src', midiPlayer.src); // Update visualizer source to match player
       });
     }
