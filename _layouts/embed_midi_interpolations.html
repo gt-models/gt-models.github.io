@@ -8,14 +8,12 @@
 
   <article>
     {{ content }}
-
   </article>
 
   <style>
     body {
       background-color: #d3d3d3; /* Light grey background */
     }
-
     .midi-player, .midi-visualizer {
       background-color: #4d4;
       display: block;
@@ -35,6 +33,9 @@
     .players-row {
       display: block; /* Ensures each row is displayed on a new line */
     }
+    .hidden {
+      display: none; /* Hide elements */
+    }
   </style>
 
   <!-- MIDI Player Integration -->
@@ -43,15 +44,18 @@
   <script src="https://cdn.jsdelivr.net/npm/focus-visible@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
 
-  {% for genre in page.genres %}
-  <!-- ADD Extra space between each genre, bolden genre -->
-    <br>
-    <h3 style="font-weight: bold;">{{ genre }}</h3>
-  <hr>
+  <!-- Genre Selector Dropdown -->
+  <label for="genreSelect">Select Genre:</label>
+  <select id="genreSelect" onchange="updateMidiSources()">
+    <option value="" selected disabled>Select Genre</option>
+    {% for genre in page.genres %}
+      <option value="{{ genre }}">{{ genre }}</option>
+    {% endfor %}
+  </select>
 
   <!-- Shared MIDI File Selector -->
-  <label for="midiSelect{{ genre }}">Select MIDI File for {{ genre }}:</label>
-  <select id="midiSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+  <label for="midiSelect">Select MIDI File:</label>
+  <select id="midiSelect" onchange="updateMidiSources()">
     <option value="" selected disabled>Select MIDI File</option> <!-- Default 'prompt' option -->
     {% for i in (1..49) %}
       <option value="{{ i }}">MIDI {{ i }}</option>
@@ -59,73 +63,81 @@
   </select>
 
   <!-- Beta Value Selector -->
-  <label for="betaSelect{{ genre }}">Select Beta:</label>
-  <select id="betaSelect{{ genre }}" onchange="updateMidiSources('{{ genre }}')">
+  <label for="betaSelect">Select Beta:</label>
+  <select id="betaSelect" onchange="updateMidiSources()">
     <option value="" selected disabled>Select Beta</option>
     <option value="0.2">0.2</option>
     <option value="0.5">0.5</option>
     <option value="1.0">1.0</option>
   </select>
 
-  <!-- Base Player Row -->
+  <!-- Players and Visualizers -->
   <div class="players-row">
     <div class="player-container">
-      <h4>Base </h4>
-      <midi-player id="midiPlayer{{ genre }}Base" sound-font visualizer="#myVisualizer{{ genre }}Base"></midi-player>
-      <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}Base"></midi-visualizer>
+      <h4>Base</h4>
+      <midi-player id="midiPlayerBase" class="hidden" sound-font visualizer="#myVisualizerBase"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerBase" class="hidden"></midi-visualizer>
     </div>
   </div>
 
-  <!-- Mute Player Row -->
   <br><br><br>
   <div class="players-row">
     <div class="player-container">
       <h4>Mute</h4>
-      <midi-player id="midiPlayer{{ genre }}Mute" sound-font visualizer="#myVisualizer{{ genre }}Mute"></midi-player>
-      <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}Mute"></midi-visualizer>
+      <midi-player id="midiPlayerMute" class="hidden" sound-font visualizer="#myVisualizerMute"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMute" class="hidden"></midi-visualizer>
     </div>
   </div>
+
   <br><br><br>
-  <!-- MuteGenre1 Player Row -->
   <div class="players-row">
     <div class="player-container">
       <h4>MG1</h4>
-      <midi-player id="midiPlayer{{ genre }}MuteGenre1" sound-font visualizer="#myVisualizer{{ genre }}MuteGenre1"></midi-player>
-      <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}MuteGenre1"></midi-visualizer>
+      <midi-player id="midiPlayerMuteGenre1" class="hidden" sound-font visualizer="#myVisualizerMuteGenre1"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMuteGenre1" class="hidden"></midi-visualizer>
     </div>
   </div>
+
   <br><br><br>
-  <!-- MuteGenre2 Player Row -->
   <div class="players-row">
     <div class="player-container">
       <h4>MG2</h4>
-      <midi-player id="midiPlayer{{ genre }}MuteGenre2" sound-font visualizer="#myVisualizer{{ genre }}MuteGenre2"></midi-player>
-      <midi-visualizer type="piano-roll" id="myVisualizer{{ genre }}MuteGenre2"></midi-visualizer>
+      <midi-player id="midiPlayerMuteGenre2" class="hidden" sound-font visualizer="#myVisualizerMuteGenre2"></midi-player>
+      <midi-visualizer type="piano-roll" id="myVisualizerMuteGenre2" class="hidden"></midi-visualizer>
     </div>
   </div>
 
-  {% endfor %}
-
   <script>
-    function updateMidiSources(genre) {
-      var midiIndex = document.getElementById('midiSelect' + genre).value;
-      var betaValue = document.getElementById('betaSelect' + genre).value;
+    function updateMidiSources() {
+      var genre = document.getElementById('genreSelect').value;
+      var midiIndex = document.getElementById('midiSelect').value;
+      var betaValue = document.getElementById('betaSelect').value;
       var subsets = ["Base", "Mute", "MuteGenre1", "MuteGenre2"];
-      subsets.forEach(function(subset) {
-        var midiPlayer = document.getElementById('midiPlayer' + genre + subset);
-        var visualizerElement = document.getElementById('myVisualizer' + genre + subset);
-        var filePrefix = subset === "GroundTruth" ? "Ground Truth/" : subset + "_" + betaValue + "/"; // Special case for Ground Truth
-        midiPlayer.src = "{{ site.baseurl }}/{{ page.root_dir }}/" + filePrefix  + genre + "/" + midiIndex + ".mid";
-        // Reset visualizer to reload with new data
-        visualizerElement.setAttribute('src', midiPlayer.src);
-      });
+
+      if (genre && midiIndex && betaValue) {
+        subsets.forEach(function(subset) {
+          var midiPlayer = document.getElementById('midiPlayer' + subset);
+          var visualizerElement = document.getElementById('myVisualizer' + subset);
+          var filePrefix = subset === "GroundTruth" ? "Ground Truth/" : subset + "_" + betaValue + "/";
+          midiPlayer.src = "{{ site.baseurl }}/{{ page.root_dir }}/" + filePrefix  + genre + "/" + midiIndex + ".mid";
+
+          // Show the players and visualizers when data is available
+          midiPlayer.classList.remove('hidden');
+          visualizerElement.classList.remove('hidden');
+
+          // Reset visualizer to reload with new data
+          visualizerElement.setAttribute('src', midiPlayer.src);
+        });
+      }
     }
 
-    // Initialize MIDI players on first load for each genre
+    // Hide all players initially
     window.onload = function() {
-      {% for genre in page.genres %}
-        updateMidiSources('{{ genre }}');
-      {% endfor %}
+      var subsets = ["Base", "Mute", "MuteGenre1", "MuteGenre2"];
+      subsets.forEach(function(subset) {
+        document.getElementById('midiPlayer' + subset).classList.add('hidden');
+        document.getElementById('myVisualizer' + subset).classList.add('hidden');
+      });
     };
   </script>
 
