@@ -119,51 +119,7 @@
 
   <article>
 <!--check if page.toc then include toc.html-->
-    
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="/generated_examples/reconstructed_samples/" width="100%" height="400px" onload="hideTopContent(this)"&gt;&lt;/iframe&gt;' readonly>
-</div>
-
-<div id="embedContent">
-  <!-- This is where the content below the embed button will go -->
-</div>
-
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
-
-  function hideTopContent(iframe) {
-    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
-  }
-</script>
-
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="https://generativedata.github.io/generated_examples/reconstructed_samples/" width="100%" height="400px" onload="hideTopContent(this)"&gt;&lt;/iframe&gt;' readonly>
-</div>
-
-<div id="embedContent">
-  <!-- This is where the content below the embed button will go -->
-</div>
-
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
-
-  function hideTopContent(iframe) {
-    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
-  }
-</script>
-<h2 id="generation-conditions">Generation Conditions</h2>
+    <h2 id="generation-conditions">Generation Conditions</h2>
 
 <p>For the following examples, we grab 50 random samples from the test set, flatten them into single-voice rhythms,
 and then generate 2-bar drums accordingly. The generations are divided per genre.</p>
@@ -174,25 +130,7 @@ Make sure you select the <code class="language-plaintext highlighter-rouge">MIDI
 </blockquote>
 
 
-</article>
-</div>
-</div>
-
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="/generated_examples/reconstructed_samples/" width="100%" height="400px"&gt;&lt;/iframe&gt;' readonly>
-</div>
-
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
-</script>
-
-  
+  </article>
 
   <style>
     .midi-player, .midi-visualizer {
@@ -1645,9 +1583,9 @@ Make sure you select the <code class="language-plaintext highlighter-rouge">MIDI
     }
   </script>
 
+</div>
 
-
-    
+    </div>
 
     <!-- Footer -->    
     <footer class="fixed-bottom">
