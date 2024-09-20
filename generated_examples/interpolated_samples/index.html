@@ -117,78 +117,43 @@
     <br><br>
   </header>
 
-  <article>
-    
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="/generated_examples/interpolated_samples/" width="100%" height="400px" onload="hideTopContent(this)"&gt;&lt;/iframe&gt;' readonly>
-</div>
+  
+  <button onclick="toggleEmbedView()">Embed</button>
 
-<div id="embedContent">
-  <!-- This is where the content below the embed button will go -->
-</div>
+  <script>
+    function toggleEmbedView() {
+      // Check if the page is currently in embedded mode
+      const urlParams = new URLSearchParams(window.location.search);
+      const isEmbedded = urlParams.get('embed') === 'true';
 
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
+      // If already embedded, load the normal view; otherwise, load the embedded view
+      if (isEmbedded) {
+        window.location.href = window.location.pathname; // Reload without the embed query parameter
+      } else {
+        window.location.href = window.location.pathname + "?embed=true"; // Add the embed query parameter
+      }
+    }
 
-  function hideTopContent(iframe) {
-    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
-  }
-</script>
+    // If the page is in embedded mode, hide the navigation bar and other unnecessary elements
+    window.onload = function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('embed') === 'true') {
+        document.querySelector('nav').style.display = 'none'; // Hides the navigation bar
+        document.querySelector('.post-header').style.marginTop = '20px'; // Adjust layout
+      }
+    }
+  </script>
 
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="https://generativedata.github.io/generated_examples/interpolated_samples/" width="100%" height="400px" onload="hideTopContent(this)"&gt;&lt;/iframe&gt;' readonly>
-</div>
-
-<div id="embedContent">
-  <!-- This is where the content below the embed button will go -->
-</div>
-
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
-
-  function hideTopContent(iframe) {
-    iframe.contentWindow.document.querySelectorAll('body > *:not(#embedContent)').forEach(el => el.style.display = 'none');
-  }
-</script>
-<h2 id="generation-conditions">Generation Conditions</h2>
+<article>
+    <h2 id="generation-conditions">Generation Conditions</h2>
 
 <p>50 pairs of samples interpolated from the test set.</p>
 
 <p>The beginning and end samples are selected such that they belong to the same genre.</p>
 
 
-</article>
-</div>
-</div>
 
-<div>
-  <button onclick="copyEmbedCode()">Embed</button>
-  <input type="text" id="embedCode" value='&lt;iframe src="/generated_examples/interpolated_samples/" width="100%" height="400px"&gt;&lt;/iframe&gt;' readonly>
-</div>
-
-<script>
-  function copyEmbedCode() {
-    var copyText = document.getElementById("embedCode");
-    copyText.select();
-    document.execCommand("copy");
-    alert("Embed code copied to clipboard: " + copyText.value);
-  }
-</script>
-
-
-  
+  </article>
 
   <style>
     .midi-player, .midi-visualizer {
@@ -1672,9 +1637,9 @@
     };
   </script>
 
+</div>
 
-
-    
+    </div>
 
     <!-- Footer -->    
     <footer class="fixed-bottom">
