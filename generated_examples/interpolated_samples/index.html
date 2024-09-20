@@ -118,28 +118,28 @@
   </header>
 
   
-  <button onclick="toggleEmbedView()">Embed</button>
+  <button onclick="generateEmbedLink()">Generate Embed Link</button>
+  <input type="text" id="embedLinkInput" style="width: 100%; margin-top: 10px;" readonly>
 
   <script>
-    function toggleEmbedView() {
-      // Check if the page is currently in embedded mode
-      const urlParams = new URLSearchParams(window.location.search);
-      const isEmbedded = urlParams.get('embed') === 'true';
+    function generateEmbedLink() {
+      // Generate the current URL with the 'embed=true' query parameter
+      const embedUrl = window.location.origin + window.location.pathname + "?embed=true";
 
-      // If already embedded, load the normal view; otherwise, load the embedded view
-      if (isEmbedded) {
-        window.location.href = window.location.pathname; // Reload without the embed query parameter
-      } else {
-        window.location.href = window.location.pathname + "?embed=true"; // Add the embed query parameter
-      }
+      // Display the embed URL in an input field for copying
+      const embedLinkInput = document.getElementById("embedLinkInput");
+      embedLinkInput.value = `<iframe src='${embedUrl}' width='100%' height='500px' frameborder='0'></iframe>`;
+      embedLinkInput.select();
+      document.execCommand("copy");
+      alert("Embed link copied to clipboard");
     }
 
-    // If the page is in embedded mode, hide the navigation bar and other unnecessary elements
+    // If the page is in embedded mode, hide the navigation bar and adjust the layout
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('embed') === 'true') {
-        document.querySelector('nav').style.display = 'none'; // Hides the navigation bar
-        document.querySelector('.post-header').style.marginTop = '20px'; // Adjust layout
+        document.querySelector('nav').style.display = 'none'; // Hide the navigation bar
+        document.querySelector('.post-header').style.marginTop = '20px'; // Adjust the margin
       }
     }
   </script>
@@ -1638,7 +1638,6 @@
   </script>
 
 </div>
-
     </div>
 
     <!-- Footer -->    
