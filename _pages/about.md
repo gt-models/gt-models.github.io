@@ -1,12 +1,12 @@
 ---
 layout: home
 title: HOME
-description: In this website, we provide a number of additional resources to complement the paper submitted to `ISMIR 2024`
+description: Complementary data for submission on controllable drum generation models
 permalink: /
 subtitle: 
 ---
 
-# **ISMIR 2024 Submission - Supplementary Material**
+# **GT Models - Complementary data for submission on controllable drum generation models**
 ---
 
 In this website, we provide a number of additional resources to complement the paper submitted to `ISMIR 2024`.
