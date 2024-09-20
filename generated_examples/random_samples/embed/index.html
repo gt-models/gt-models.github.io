@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">Random Generations</h1>
+    <p class="post-description"></p>
+    <hr>
+    <br><br>
+  </header>
+
+  <article>
+    
+
+  </article>
+
+  <style>
+    body {
+      background-color: #d3d3d3; /* Light grey background */
+    }
+    .midi-player, .midi-visualizer {
+      background-color: #4d4;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <!-- MIDI Player Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
+
+  <!-- Genre Selector Dropdown -->
+  <select id="genreSelect" onchange="updateMidiSources()">
+    <option value="" selected disabled>Select Genre</option>
+    
+      <option value="Base">Base</option>
+    
+      <option value="Mute">Mute</option>
+    
+      <option value="MuteGenre1">MuteGenre1</option>
+    
+      <option value="MuteGenre2">MuteGenre2</option>
+    
+  </select>
+
+  <!-- MIDI File Selector -->
+  <select id="midiSelect" onchange="updateMidiSources()">
+    <option value="" selected disabled>Select MIDI File</option>
+    
+      <option value="1">MIDI 1</option>
+    
+      <option value="2">MIDI 2</option>
+    
+      <option value="3">MIDI 3</option>
+    
+      <option value="4">MIDI 4</option>
+    
+      <option value="5">MIDI 5</option>
+    
+      <option value="6">MIDI 6</option>
+    
+      <option value="7">MIDI 7</option>
+    
+      <option value="8">MIDI 8</option>
+    
+      <option value="9">MIDI 9</option>
+    
+      <option value="10">MIDI 10</option>
+    
+      <option value="11">MIDI 11</option>
+    
+      <option value="12">MIDI 12</option>
+    
+      <option value="13">MIDI 13</option>
+    
+      <option value="14">MIDI 14</option>
+    
+      <option value="15">MIDI 15</option>
+    
+      <option value="16">MIDI 16</option>
+    
+      <option value="17">MIDI 17</option>
+    
+      <option value="18">MIDI 18</option>
+    
+      <option value="19">MIDI 19</option>
+    
+      <option value="20">MIDI 20</option>
+    
+      <option value="21">MIDI 21</option>
+    
+      <option value="22">MIDI 22</option>
+    
+      <option value="23">MIDI 23</option>
+    
+      <option value="24">MIDI 24</option>
+    
+      <option value="25">MIDI 25</option>
+    
+      <option value="26">MIDI 26</option>
+    
+      <option value="27">MIDI 27</option>
+    
+      <option value="28">MIDI 28</option>
+    
+      <option value="29">MIDI 29</option>
+    
+      <option value="30">MIDI 30</option>
+    
+      <option value="31">MIDI 31</option>
+    
+      <option value="32">MIDI 32</option>
+    
+      <option value="33">MIDI 33</option>
+    
+      <option value="34">MIDI 34</option>
+    
+      <option value="35">MIDI 35</option>
+    
+      <option value="36">MIDI 36</option>
+    
+      <option value="37">MIDI 37</option>
+    
+      <option value="38">MIDI 38</option>
+    
+      <option value="39">MIDI 39</option>
+    
+      <option value="40">MIDI 40</option>
+    
+      <option value="41">MIDI 41</option>
+    
+      <option value="42">MIDI 42</option>
+    
+      <option value="43">MIDI 43</option>
+    
+      <option value="44">MIDI 44</option>
+    
+      <option value="45">MIDI 45</option>
+    
+      <option value="46">MIDI 46</option>
+    
+      <option value="47">MIDI 47</option>
+    
+      <option value="48">MIDI 48</option>
+    
+      <option value="49">MIDI 49</option>
+    
+  </select>
+
+  <!-- Beta Value Selector -->
+  <select id="betaSelect" onchange="updateMidiSources()">
+    <option value="" selected disabled>Select Beta</option>
+    <option value="0.2">0.2</option>
+    <option value="0.5">0.5</option>
+    <option value="1.0">1.0</option>
+  </select>
+
+  <div class="player-container">
+    <midi-player id="midiPlayer" sound-font visualizer="#midiVisualizer"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizer"></midi-visualizer>
+  </div>
+
+  <script>
+    function updateMidiSources() {
+      var genre = document.getElementById('genreSelect').value;
+      var midiIndex = document.getElementById('midiSelect').value;
+      var betaValue = document.getElementById('betaSelect').value;
+
+      if (genre && midiIndex && betaValue) {
+        var midiUrl = "/assets/random_samples/" + genre + "/" + midiIndex + ".mid";
+        document.getElementById('midiPlayer').src = midiUrl;
+        document.getElementById('midiVisualizer').setAttribute('src', midiUrl);
+      }
+    }
+  </script>
+
+</div>
+</body></html>

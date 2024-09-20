@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<div class="post">
+  <header class="post-header">
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    
+
+  </article>
+
+  <style>
+    body {
+      background-color: #d3d3d3; /* Light grey background */
+    }
+    .midi-player, .midi-visualizer {
+      background-color: #4d4;
+      display: block;
+      width: auto;
+      height: auto;
+    }
+  </style>
+
+  <!-- MIDI Player Integration -->
+  <script src="https://cdn.jsdelivr.net/npm/tone@14.7.58"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@magenta/music@1.23.1/es6/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html-midi-player@1.5.0"></script>
+
+  <!-- Genre Selector Dropdown -->
+  <select id="sourcegenreSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Original Genre</option> <!-- Default 'prompt' option -->
+    
+    <option value="Afro">Afro</option>
+    
+    <option value="Disco">Disco</option>
+    
+    <option value="Funk">Funk</option>
+    
+    <option value="HipHop">HipHop</option>
+    
+    <option value="Jazz">Jazz</option>
+    
+    <option value="Latin">Latin</option>
+    
+    <option value="Pop">Pop</option>
+    
+    <option value="Reggae">Reggae</option>
+    
+    <option value="Rock">Rock</option>
+    
+  </select>
+  <select id="targetgenreSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Target Genre</option> <!-- Default 'prompt' option -->
+    
+    <option value="Afro">Afro</option>
+    
+    <option value="Disco">Disco</option>
+    
+    <option value="Funk">Funk</option>
+    
+    <option value="HipHop">HipHop</option>
+    
+    <option value="Jazz">Jazz</option>
+    
+    <option value="Latin">Latin</option>
+    
+    <option value="Pop">Pop</option>
+    
+    <option value="Reggae">Reggae</option>
+    
+    <option value="Rock">Rock</option>
+    
+  </select>
+
+  <!-- Sample Selector -->
+  <select id="sampleSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Sample</option>
+    
+    <option value="0">Sample 0</option>
+    
+    <option value="1">Sample 1</option>
+    
+    <option value="2">Sample 2</option>
+    
+    <option value="3">Sample 3</option>
+    
+    <option value="4">Sample 4</option>
+    
+    <option value="5">Sample 5</option>
+    
+    <option value="6">Sample 6</option>
+    
+    <option value="7">Sample 7</option>
+    
+    <option value="8">Sample 8</option>
+    
+    <option value="9">Sample 9</option>
+    
+    <option value="10">Sample 10</option>
+    
+    <option value="11">Sample 11</option>
+    
+    <option value="12">Sample 12</option>
+    
+    <option value="13">Sample 13</option>
+    
+    <option value="14">Sample 14</option>
+    
+    <option value="15">Sample 15</option>
+    
+    <option value="16">Sample 16</option>
+    
+    <option value="17">Sample 17</option>
+    
+    <option value="18">Sample 18</option>
+    
+    <option value="19">Sample 19</option>
+    
+  </select>
+
+  <!-- Model Selector -->
+  <select id="modelSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Model</option>
+    <option value="0">MuteGenre1</option>
+    <option value="1">MuteGenre2</option>
+  </select>
+
+  <!-- Beta Value Selector -->
+  <select id="betaSelect" onchange="updateMidiSources()">
+    <option selected disabled>Select Beta</option>
+    <option value="0">0.2</option>
+    <option value="1">0.5</option>
+    <option value="2">1.0</option>
+  </select>
+
+  <div class="players">
+    <h7>Original Genre</h7>
+    <midi-player id="midiPlayerOriginal" sound-font visualizer="#midiVisualizerOriginal"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizerOriginal"></midi-visualizer>
+
+    <h7>Target Genre</h7>
+    <midi-player id="midiPlayerTarget" sound-font visualizer="#midiVisualizerTarget"></midi-player>
+    <midi-visualizer type="piano-roll" id="midiVisualizerTarget"></midi-visualizer>
+  </div>
+
+  <script>
+    function updateMidiSources() {
+      var sourceGenre = document.getElementById('sourcegenreSelect').value;
+      var targetGenre = document.getElementById('targetgenreSelect').value;
+      var sample = document.getElementById('sampleSelect').value;
+      var model = document.getElementById('modelSelect').value;
+      var beta = document.getElementById('betaSelect').value;
+
+      var midiUrlOriginal = "/assets/genre_control_samples/" + sourceGenre + "/" + sample + ".mid";
+      var midiUrlTarget = "/assets/genre_control_samples/" + targetGenre + "/" + sample + ".mid";
+
+      document.getElementById('midiPlayerOriginal').src = midiUrlOriginal;
+      document.getElementById('midiVisualizerOriginal').setAttribute('src', midiUrlOriginal);
+
+      document.getElementById('midiPlayerTarget').src = midiUrlTarget;
+      document.getElementById('midiVisualizerTarget').setAttribute('src', midiUrlTarget);
+    }
+  </script>
+
+</div>
+</body></html>
