@@ -129,6 +129,21 @@ That is, if you change the beta value, you shouldn’t expect the generations to
 </blockquote>
 
 
+
+<div>
+  <button onclick="copyEmbedCode()">Embed</button>
+  <input type="text" id="embedCode" value='&lt;iframe src="/generated_examples/random_samples/" width="100%" height="400px"&gt;&lt;/iframe&gt;' readonly>
+</div>
+
+<script>
+  function copyEmbedCode() {
+    var copyText = document.getElementById("embedCode");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Embed code copied to clipboard: " + copyText.value);
+  }
+</script>
+
   </article>
 
   <style>
