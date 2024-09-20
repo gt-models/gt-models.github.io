@@ -27,12 +27,15 @@ layout: default
       alert("Embed link copied to clipboard");
     }
 
-    // If the page is in embedded mode, hide the navigation bar and adjust the layout
+    // If the page is in embedded mode, hide the navigation bar and other unnecessary elements
     window.onload = function() {
       const urlParams = new URLSearchParams(window.location.search);
       if (urlParams.get('embed') === 'true') {
         document.querySelector('nav').style.display = 'none'; // Hide the navigation bar
-        document.querySelector('.post-header').style.marginTop = '20px'; // Adjust the margin
+        document.querySelector('.post-header').style.display = 'none'; // Hide the post header
+        document.querySelector('footer').style.display = 'none'; // Hide the footer
+        document.querySelector('.sidebar').style.display = 'none'; // Hide any sidebars
+        document.querySelector('.post').style.marginTop = '0'; // Adjust content layout
       }
     }
   </script>
